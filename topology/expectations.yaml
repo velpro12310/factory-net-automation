@@ -1,0 +1,298 @@
+# =============================================================================
+# 可达性期望与不变式
+#
+# 期望（expectations）：逐条声明的关键业务流，是「点」检查。
+# 不变式（invariants）：跨全量矩阵的普适要求，是「面」检查。
+#
+# 两者缺一不可：
+#   * 只有期望 -> 覆盖不到没列举的组合（漏网之鱼）
+#   * 只有不变式 -> 抓不住单点业务流的放通遗漏
+#
+# 这份文件就是「网络设计意图」的可执行版本：改网络之前先改这里，
+# 引擎会告诉你这个改动会不会破坏既有隔离要求。
+# =============================================================================
+
+meta:
+  name: 智能工厂网络可达性期望
+  version: v1.0.0
+  note: expect 取值 permit / deny，与引擎推导结果比对
+
+expectations:
+  # ---------------- 车间生产区：受控放通 ----------------
+  - id: EXP-001
+    src: PLC-01
+    dst: MES-APP
+    service: MES-WEB
+    expect: permit
+    requirement: REQ-ACL-011
+    note: 焊装线 PLC 向 MES 上报生产数据，必须放通
+  - id: EXP-002
+    src: PLC-02
+    dst: MES-DB
+    service: MySQL
+    expect: permit
+    requirement: REQ-ACL-012
+    note: 总装线 PLC 直连数据库写入工位数据
+  - id: EXP-003
+    src: ROBOT-01
+    dst: OPCUA-GW
+    service: OPC-UA
+    expect: permit
+    requirement: REQ-ACL-013
+    note: 机器人控制器经 OPC UA 网关汇聚数据
+  - id: EXP-004
+    src: HMI-01
+    dst: NTP-SRV
+    service: NTP
+    expect: permit
+    requirement: REQ-ACL-014
+    note: 产线 HMI 与 PLC 对时，日志时间戳才可比
+  - id: EXP-005
+    src: ENG-WS
+    dst: MES-APP
+    service: MES-WEB
+    expect: permit
+    requirement: REQ-ACL-011
+    note: 工程师站访问 MES 做参数下发
+  - id: EXP-006
+    src: ENG-WS
+    dst: PLC-01
+    service: SMB
+    expect: permit
+    requirement: REQ-L2-001
+    note: 同域内工程师站向 PLC 下发配方文件
+
+  # ---------------- 办公区：只允许访问 MES Web ----------------
+  - id: EXP-010
+    src: PC-PLN-01
+    dst: MES-APP
+    service: HTTP
+    expect: permit
+    requirement: REQ-ACL-020
+    note: 计划员使用 MES 的 B/S 界面
+  - id: EXP-011
+    src: PC-FIN-01
+    dst: MES-APP
+    service: HTTPS
+    expect: permit
+    requirement: REQ-ACL-020
+    note: 财务通过 HTTPS 访问报表
+  - id: EXP-012
+    src: PC-FIN-01
+    dst: MES-DB
+    service: MySQL
+    expect: deny
+    requirement: REQ-ACL-021
+    note: 办公终端严禁直连数据库（等保要求）
+  - id: EXP-013
+    src: PRINTER-01
+    dst: MES-APP
+    service: SMB
+    expect: deny
+    requirement: REQ-ACL-021
+    note: SMB 未在放通列表内，必须默认拒绝
+
+  # ---------------- 隔离要求（合规红线） ----------------
+  - id: EXP-020
+    src: PLC-01
+    dst: PC-FIN-01
+    service: SMB
+    expect: deny
+    requirement: REQ-ACL-030
+    note: 生产网与办公网必须隔离，SMB 是横向移动高危端口
+  - id: EXP-021
+    src: PLC-01
+    dst: PC-PLN-01
+    service: HTTP
+    expect: deny
+    requirement: REQ-ACL-030
+    note: 生产网不得访问办公网任何服务
+  - id: EXP-022
+    src: PC-FIN-01
+    dst: PLC-01
+    service: HTTP
+    expect: deny
+    requirement: REQ-ACL-031
+    note: 办公网不得访问生产设备
+  - id: EXP-023
+    src: MES-APP
+    dst: PLC-01
+    service: MES-WEB
+    expect: deny
+    requirement: REQ-ACL-032
+    note: 服务器区不得主动访问生产设备（防横向移动）
+
+  # ---------------- 出网策略 ----------------
+  - id: EXP-030
+    src: PLC-01
+    dst: PATCH-SRV
+    service: HTTPS
+    expect: deny
+    requirement: REQ-ACL-040
+    note: 生产网禁止访问互联网
+  - id: EXP-031
+    src: HMI-01
+    dst: VENDOR-CLOUD
+    service: HTTPS
+    expect: deny
+    requirement: REQ-ACL-040
+    note: 生产设备不得连供应商云平台
+  - id: EXP-032
+    src: PC-FIN-01
+    dst: PATCH-SRV
+    service: HTTPS
+    expect: permit
+    requirement: REQ-NAT-011
+    note: 办公区经 NAT 下载更新
+  - id: EXP-033
+    src: MES-APP
+    dst: PATCH-SRV
+    service: HTTPS
+    expect: permit
+    requirement: REQ-NAT-012
+    note: 服务器区经 NAT 拉取补丁
+
+  # ---------------- 设备管理区 ----------------
+  - id: EXP-040
+    src: NMS-01
+    dst: PLC-01
+    service: SSH
+    expect: permit
+    requirement: REQ-ACL-050
+    note: 网管区可对生产设备做远程运维
+  - id: EXP-043
+    src: NMS-01
+    dst: ROBOT-01
+    service: SNMP
+    expect: permit
+    requirement: REQ-ACL-050
+    note: >
+      SNMP 走 UDP 161。这条期望是可达性矩阵跑出来后补的——
+      最初策略写成「tcp ports: [22, 161]」，结果 SSH 通、SNMP 不通。
+      矩阵扫描把它暴露出来，说明网络策略必须按协议分别定义。
+  - id: EXP-041
+    src: PLC-01
+    dst: NMS-01
+    service: SSH
+    expect: deny
+    requirement: REQ-ACL-051
+    note: 生产终端不得反向进入设备管理网（方向性要求）
+  - id: EXP-042
+    src: NMS-01
+    dst: MES-DB
+    service: MySQL
+    expect: deny
+    requirement: REQ-ACL-052
+    note: 网管区不需要访问数据库，应被默认拒绝兜住
+
+  # ---------------- 同域互通（二层） ----------------
+  - id: EXP-050
+    src: MES-APP
+    dst: MES-DB
+    service: MySQL
+    expect: permit
+    requirement: REQ-L2-001
+    note: 服务器区内部应用与数据库互通
+  - id: EXP-051
+    src: PLC-01
+    dst: PLC-02
+    service: NTP
+    expect: permit
+    requirement: REQ-L2-002
+    note: 车间同 VLAN 内 PLC 互通
+
+  # ---------------- 外部主机不得主动进内网 ----------------
+  - id: EXP-060
+    src: VENDOR-CLOUD
+    dst: MES-APP
+    service: HTTPS
+    expect: deny
+    requirement: REQ-ACL-060
+    note: 供应商云平台不得主动访问内网（如需远程运维须走跳板机，本阶段未开）
+
+# =============================================================================
+# 不变式：跨全量矩阵的普适要求
+# =============================================================================
+invariants:
+  - id: INV-001
+    from_zone: workshop
+    to_zone: office
+    service: all
+    expect: deny
+    note: 生产网到办公网的所有主机、所有服务组合必须全部阻断
+  - id: INV-002
+    from_zone: workshop
+    to_zone: internet
+    service: all
+    expect: deny
+    note: 生产网不得有任何出网通道
+  - id: INV-003
+    from_zone: workshop
+    to_zone: mgmt
+    service: all
+    expect: deny
+    note: 生产终端不得进入设备管理网
+  - id: INV-004
+    from_zone: office
+    to_zone: workshop
+    service: all
+    expect: deny
+    note: 办公网不得访问生产设备
+  - id: INV-005
+    from_zone: office
+    to_zone: server
+    service: MySQL
+    expect: deny
+    note: 办公区到数据库端口必须全阻断
+  - id: INV-006
+    from_zone: server
+    to_zone: workshop
+    service: all
+    expect: deny
+    note: 服务器区不得主动访问生产设备
+  - id: INV-007
+    from_zone: internet
+    to_zone: workshop
+    service: all
+    expect: deny
+    note: 外部网络不得进入生产网
+  - id: INV-008
+    from_zone: internet
+    to_zone: server
+    service: all
+    expect: deny
+    note: 外部网络不得进入服务器区
+  - id: INV-009
+    from_zone: workshop
+    to_zone: workshop
+    service: all
+    expect: permit
+    note: 同域内二层互联必须保持可用
+  - id: INV-010
+    from_zone: server
+    to_zone: server
+    service: all
+    expect: permit
+    note: 服务器区内部互通必须保持可用
+  - id: INV-011
+    from_zone: mgmt
+    to_zone: server
+    service: MySQL
+    expect: deny
+    note: 网管区不得访问数据库等未放通服务
+  - id: INV-012
+    from_zone: server
+    to_zone: office
+    service: all
+    expect: deny
+    note: >
+      服务器区不得访问办公区（防数据外泄）。这条不变式是补的——
+      最初策略表里只写了 server→workshop 的拒绝，漏了 server→office；
+      出网放通规则一加，server→office 就被 catch-all 的 permit ip 放通了。
+      矩阵扫描把它抓了出来。
+  - id: INV-013
+    from_zone: mgmt
+    to_zone: internet
+    service: all
+    expect: deny
+    note: 管理区不得出网（网管设备不应有互联网通道）

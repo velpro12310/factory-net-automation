@@ -1,0 +1,77 @@
+# =============================================================================
+# {{ device.name }} — {{ device.description }}
+# 型号：{{ device.model }}    管理地址：{{ device.management_ip }}
+# 拓扑：{{ meta.name }}（{{ meta.site }}）  {{ meta.version }}
+# 生成时间：{{ generated_at }}
+#
+# 本文件由 net_auto 自动生成（templates/access_switch.j2），请勿手工修改设备。
+# 接入层职责：二层转发 + 带外管理。域间访问控制由核心交换机承担。
+# =============================================================================
+#
+sysname {{ device.name }}
+#
+vlan batch {{ device.vlans | join(' ') }}
+#
+# ---- 管理网关（仅用于设备自身被管理，不承载业务转发）----
+#
+{% for svi in svis %}
+interface Vlanif{{ svi.vlan }}
+ description {{ svi.description }}
+ ip address {{ svi.addr }} {{ svi.mask }}
+#
+{% endfor %}
+# ---- 物理接口 ----
+#
+{% for iface in interfaces %}
+interface {{ iface.name }}
+ description {{ iface.desc_full }}
+{% if iface.type == 'trunk' %}
+ port link-type trunk
+ port trunk allow-pass vlan {{ iface.allow_vlans | join(' ') }}
+{% else %}
+ port link-type access
+ port default vlan {{ iface.vlan }}
+ stp edged-port enable
+{% endif %}
+#
+{% endfor %}
+# ---- 防环与接入安全 ----
+#
+stp mode rstp
+stp bpdu-protection
+#
+# ---- 路由（管理流量默认网关）----
+#
+{% for route in routes %}
+ip route-static {{ route.network }} {{ route.mask }} {{ route.next_hop }} preference {{ route.preference }}
+{% endfor %}
+#
+# ---- 基础运维 ----
+#
+{% if ops.ntp_required %}
+ntp-service unicast-server {{ ops.ntp_server }}
+#
+{% endif %}
+{% if ops.logging_required and ops.loghost %}
+info-center enable
+info-center loghost {{ ops.loghost }}
+info-center source default channel 2 log level warning
+#
+{% endif %}
+stelnet server enable
+#
+aaa
+ local-user netadmin password irreversible-cipher Netadmin@2026
+ local-user netadmin privilege level 15
+ local-user netadmin service-type ssh
+ local-user netadmin service-type snmp
+#
+user-interface vty 0 4
+ authentication-mode aaa
+ protocol inbound ssh
+#
+snmp-agent
+ snmp-agent sys-info version v2c
+ snmp-agent community read cipher SnmpRead@2026
+#
+return

@@ -1,0 +1,2101 @@
+﻿源主机,源域,目的主机,目的域,服务,协议,端口,结论,层级,命中策略,经NAT,原因
+PLC-01,workshop,PLC-02,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+PLC-01,workshop,PLC-02,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+PLC-01,workshop,PLC-02,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+PLC-01,workshop,PLC-02,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+PLC-01,workshop,PLC-02,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+PLC-01,workshop,PLC-02,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+PLC-01,workshop,PLC-02,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+PLC-01,workshop,PLC-02,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+PLC-01,workshop,PLC-02,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+PLC-01,workshop,PLC-02,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ROBOT-01,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ROBOT-01,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ROBOT-01,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ROBOT-01,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ROBOT-01,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ROBOT-01,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ROBOT-01,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ROBOT-01,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ROBOT-01,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ROBOT-01,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+PLC-01,workshop,HMI-01,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+PLC-01,workshop,HMI-01,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+PLC-01,workshop,HMI-01,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+PLC-01,workshop,HMI-01,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+PLC-01,workshop,HMI-01,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+PLC-01,workshop,HMI-01,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+PLC-01,workshop,HMI-01,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+PLC-01,workshop,HMI-01,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+PLC-01,workshop,HMI-01,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+PLC-01,workshop,HMI-01,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ENG-WS,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ENG-WS,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ENG-WS,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ENG-WS,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ENG-WS,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ENG-WS,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ENG-WS,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ENG-WS,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ENG-WS,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+PLC-01,workshop,ENG-WS,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+PLC-01,workshop,PC-FIN-01,office,MES-WEB,tcp,8080,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-FIN-01,office,MySQL,tcp,3306,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-FIN-01,office,OPC-UA,tcp,4840,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-FIN-01,office,HTTP,tcp,80,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-FIN-01,office,HTTPS,tcp,443,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-FIN-01,office,SMB,tcp,445,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-FIN-01,office,SSH,tcp,22,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-FIN-01,office,SNMP,udp,161,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-FIN-01,office,NTP,udp,123,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-FIN-01,office,ICMP,icmp,,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-PLN-01,office,MES-WEB,tcp,8080,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-PLN-01,office,MySQL,tcp,3306,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-PLN-01,office,OPC-UA,tcp,4840,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-PLN-01,office,HTTP,tcp,80,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-PLN-01,office,HTTPS,tcp,443,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-PLN-01,office,SMB,tcp,445,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-PLN-01,office,SSH,tcp,22,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-PLN-01,office,SNMP,udp,161,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-PLN-01,office,NTP,udp,123,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PC-PLN-01,office,ICMP,icmp,,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PRINTER-01,office,MES-WEB,tcp,8080,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PRINTER-01,office,MySQL,tcp,3306,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PRINTER-01,office,OPC-UA,tcp,4840,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PRINTER-01,office,HTTP,tcp,80,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PRINTER-01,office,HTTPS,tcp,443,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PRINTER-01,office,SMB,tcp,445,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PRINTER-01,office,SSH,tcp,22,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PRINTER-01,office,SNMP,udp,161,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PRINTER-01,office,NTP,udp,123,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,PRINTER-01,office,ICMP,icmp,,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-01,workshop,MES-APP,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+PLC-01,workshop,MES-APP,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+PLC-01,workshop,MES-APP,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+PLC-01,workshop,MES-APP,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,MES-APP,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,MES-APP,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,MES-APP,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,MES-APP,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,MES-APP,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+PLC-01,workshop,MES-APP,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+PLC-01,workshop,MES-DB,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+PLC-01,workshop,MES-DB,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+PLC-01,workshop,MES-DB,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+PLC-01,workshop,MES-DB,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,MES-DB,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,MES-DB,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,MES-DB,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,MES-DB,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,MES-DB,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+PLC-01,workshop,MES-DB,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+PLC-01,workshop,OPCUA-GW,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+PLC-01,workshop,OPCUA-GW,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+PLC-01,workshop,OPCUA-GW,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+PLC-01,workshop,OPCUA-GW,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,OPCUA-GW,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,OPCUA-GW,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,OPCUA-GW,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,OPCUA-GW,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,OPCUA-GW,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+PLC-01,workshop,OPCUA-GW,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+PLC-01,workshop,NTP-SRV,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+PLC-01,workshop,NTP-SRV,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+PLC-01,workshop,NTP-SRV,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+PLC-01,workshop,NTP-SRV,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,NTP-SRV,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,NTP-SRV,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,NTP-SRV,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,NTP-SRV,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-01,workshop,NTP-SRV,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+PLC-01,workshop,NTP-SRV,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+PLC-01,workshop,NMS-01,mgmt,MES-WEB,tcp,8080,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-01,mgmt,MySQL,tcp,3306,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-01,mgmt,OPC-UA,tcp,4840,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-01,mgmt,HTTP,tcp,80,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-01,mgmt,HTTPS,tcp,443,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-01,mgmt,SMB,tcp,445,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-01,mgmt,SSH,tcp,22,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-01,mgmt,SNMP,udp,161,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-01,mgmt,NTP,udp,123,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-01,mgmt,ICMP,icmp,,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-02,mgmt,MES-WEB,tcp,8080,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-02,mgmt,MySQL,tcp,3306,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-02,mgmt,OPC-UA,tcp,4840,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-02,mgmt,HTTP,tcp,80,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-02,mgmt,HTTPS,tcp,443,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-02,mgmt,SMB,tcp,445,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-02,mgmt,SSH,tcp,22,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-02,mgmt,SNMP,udp,161,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-02,mgmt,NTP,udp,123,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,NMS-02,mgmt,ICMP,icmp,,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-01,workshop,VENDOR-CLOUD,internet,MES-WEB,tcp,8080,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,VENDOR-CLOUD,internet,MySQL,tcp,3306,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,VENDOR-CLOUD,internet,OPC-UA,tcp,4840,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,VENDOR-CLOUD,internet,HTTP,tcp,80,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,VENDOR-CLOUD,internet,HTTPS,tcp,443,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,VENDOR-CLOUD,internet,SMB,tcp,445,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,VENDOR-CLOUD,internet,SSH,tcp,22,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,VENDOR-CLOUD,internet,SNMP,udp,161,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,VENDOR-CLOUD,internet,NTP,udp,123,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,VENDOR-CLOUD,internet,ICMP,icmp,,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,PATCH-SRV,internet,MES-WEB,tcp,8080,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,PATCH-SRV,internet,MySQL,tcp,3306,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,PATCH-SRV,internet,OPC-UA,tcp,4840,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,PATCH-SRV,internet,HTTP,tcp,80,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,PATCH-SRV,internet,HTTPS,tcp,443,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,PATCH-SRV,internet,SMB,tcp,445,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,PATCH-SRV,internet,SSH,tcp,22,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,PATCH-SRV,internet,SNMP,udp,161,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,PATCH-SRV,internet,NTP,udp,123,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-01,workshop,PATCH-SRV,internet,ICMP,icmp,,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,PLC-01,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+PLC-02,workshop,PLC-01,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+PLC-02,workshop,PLC-01,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+PLC-02,workshop,PLC-01,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+PLC-02,workshop,PLC-01,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+PLC-02,workshop,PLC-01,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+PLC-02,workshop,PLC-01,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+PLC-02,workshop,PLC-01,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+PLC-02,workshop,PLC-01,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+PLC-02,workshop,PLC-01,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ROBOT-01,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ROBOT-01,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ROBOT-01,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ROBOT-01,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ROBOT-01,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ROBOT-01,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ROBOT-01,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ROBOT-01,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ROBOT-01,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ROBOT-01,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+PLC-02,workshop,HMI-01,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+PLC-02,workshop,HMI-01,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+PLC-02,workshop,HMI-01,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+PLC-02,workshop,HMI-01,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+PLC-02,workshop,HMI-01,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+PLC-02,workshop,HMI-01,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+PLC-02,workshop,HMI-01,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+PLC-02,workshop,HMI-01,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+PLC-02,workshop,HMI-01,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+PLC-02,workshop,HMI-01,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ENG-WS,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ENG-WS,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ENG-WS,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ENG-WS,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ENG-WS,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ENG-WS,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ENG-WS,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ENG-WS,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ENG-WS,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+PLC-02,workshop,ENG-WS,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+PLC-02,workshop,PC-FIN-01,office,MES-WEB,tcp,8080,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-FIN-01,office,MySQL,tcp,3306,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-FIN-01,office,OPC-UA,tcp,4840,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-FIN-01,office,HTTP,tcp,80,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-FIN-01,office,HTTPS,tcp,443,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-FIN-01,office,SMB,tcp,445,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-FIN-01,office,SSH,tcp,22,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-FIN-01,office,SNMP,udp,161,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-FIN-01,office,NTP,udp,123,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-FIN-01,office,ICMP,icmp,,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-PLN-01,office,MES-WEB,tcp,8080,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-PLN-01,office,MySQL,tcp,3306,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-PLN-01,office,OPC-UA,tcp,4840,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-PLN-01,office,HTTP,tcp,80,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-PLN-01,office,HTTPS,tcp,443,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-PLN-01,office,SMB,tcp,445,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-PLN-01,office,SSH,tcp,22,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-PLN-01,office,SNMP,udp,161,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-PLN-01,office,NTP,udp,123,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PC-PLN-01,office,ICMP,icmp,,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PRINTER-01,office,MES-WEB,tcp,8080,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PRINTER-01,office,MySQL,tcp,3306,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PRINTER-01,office,OPC-UA,tcp,4840,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PRINTER-01,office,HTTP,tcp,80,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PRINTER-01,office,HTTPS,tcp,443,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PRINTER-01,office,SMB,tcp,445,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PRINTER-01,office,SSH,tcp,22,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PRINTER-01,office,SNMP,udp,161,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PRINTER-01,office,NTP,udp,123,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,PRINTER-01,office,ICMP,icmp,,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+PLC-02,workshop,MES-APP,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+PLC-02,workshop,MES-APP,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+PLC-02,workshop,MES-APP,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+PLC-02,workshop,MES-APP,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,MES-APP,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,MES-APP,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,MES-APP,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,MES-APP,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,MES-APP,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+PLC-02,workshop,MES-APP,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+PLC-02,workshop,MES-DB,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+PLC-02,workshop,MES-DB,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+PLC-02,workshop,MES-DB,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+PLC-02,workshop,MES-DB,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,MES-DB,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,MES-DB,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,MES-DB,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,MES-DB,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,MES-DB,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+PLC-02,workshop,MES-DB,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+PLC-02,workshop,OPCUA-GW,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+PLC-02,workshop,OPCUA-GW,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+PLC-02,workshop,OPCUA-GW,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+PLC-02,workshop,OPCUA-GW,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,OPCUA-GW,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,OPCUA-GW,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,OPCUA-GW,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,OPCUA-GW,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,OPCUA-GW,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+PLC-02,workshop,OPCUA-GW,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+PLC-02,workshop,NTP-SRV,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+PLC-02,workshop,NTP-SRV,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+PLC-02,workshop,NTP-SRV,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+PLC-02,workshop,NTP-SRV,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,NTP-SRV,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,NTP-SRV,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,NTP-SRV,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,NTP-SRV,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+PLC-02,workshop,NTP-SRV,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+PLC-02,workshop,NTP-SRV,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+PLC-02,workshop,NMS-01,mgmt,MES-WEB,tcp,8080,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-01,mgmt,MySQL,tcp,3306,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-01,mgmt,OPC-UA,tcp,4840,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-01,mgmt,HTTP,tcp,80,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-01,mgmt,HTTPS,tcp,443,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-01,mgmt,SMB,tcp,445,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-01,mgmt,SSH,tcp,22,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-01,mgmt,SNMP,udp,161,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-01,mgmt,NTP,udp,123,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-01,mgmt,ICMP,icmp,,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-02,mgmt,MES-WEB,tcp,8080,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-02,mgmt,MySQL,tcp,3306,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-02,mgmt,OPC-UA,tcp,4840,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-02,mgmt,HTTP,tcp,80,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-02,mgmt,HTTPS,tcp,443,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-02,mgmt,SMB,tcp,445,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-02,mgmt,SSH,tcp,22,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-02,mgmt,SNMP,udp,161,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-02,mgmt,NTP,udp,123,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,NMS-02,mgmt,ICMP,icmp,,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+PLC-02,workshop,VENDOR-CLOUD,internet,MES-WEB,tcp,8080,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,VENDOR-CLOUD,internet,MySQL,tcp,3306,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,VENDOR-CLOUD,internet,OPC-UA,tcp,4840,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,VENDOR-CLOUD,internet,HTTP,tcp,80,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,VENDOR-CLOUD,internet,HTTPS,tcp,443,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,VENDOR-CLOUD,internet,SMB,tcp,445,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,VENDOR-CLOUD,internet,SSH,tcp,22,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,VENDOR-CLOUD,internet,SNMP,udp,161,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,VENDOR-CLOUD,internet,NTP,udp,123,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,VENDOR-CLOUD,internet,ICMP,icmp,,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,PATCH-SRV,internet,MES-WEB,tcp,8080,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,PATCH-SRV,internet,MySQL,tcp,3306,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,PATCH-SRV,internet,OPC-UA,tcp,4840,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,PATCH-SRV,internet,HTTP,tcp,80,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,PATCH-SRV,internet,HTTPS,tcp,443,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,PATCH-SRV,internet,SMB,tcp,445,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,PATCH-SRV,internet,SSH,tcp,22,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,PATCH-SRV,internet,SNMP,udp,161,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,PATCH-SRV,internet,NTP,udp,123,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PLC-02,workshop,PATCH-SRV,internet,ICMP,icmp,,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,PLC-01,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-01,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-01,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-01,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-01,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-01,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-01,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-01,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-01,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-01,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-02,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-02,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-02,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-02,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-02,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-02,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-02,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-02,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-02,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PLC-02,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,HMI-01,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,HMI-01,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,HMI-01,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,HMI-01,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,HMI-01,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,HMI-01,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,HMI-01,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,HMI-01,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,HMI-01,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,HMI-01,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,ENG-WS,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,ENG-WS,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,ENG-WS,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,ENG-WS,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,ENG-WS,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,ENG-WS,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,ENG-WS,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,ENG-WS,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,ENG-WS,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,ENG-WS,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+ROBOT-01,workshop,PC-FIN-01,office,MES-WEB,tcp,8080,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-FIN-01,office,MySQL,tcp,3306,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-FIN-01,office,OPC-UA,tcp,4840,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-FIN-01,office,HTTP,tcp,80,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-FIN-01,office,HTTPS,tcp,443,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-FIN-01,office,SMB,tcp,445,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-FIN-01,office,SSH,tcp,22,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-FIN-01,office,SNMP,udp,161,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-FIN-01,office,NTP,udp,123,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-FIN-01,office,ICMP,icmp,,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-PLN-01,office,MES-WEB,tcp,8080,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-PLN-01,office,MySQL,tcp,3306,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-PLN-01,office,OPC-UA,tcp,4840,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-PLN-01,office,HTTP,tcp,80,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-PLN-01,office,HTTPS,tcp,443,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-PLN-01,office,SMB,tcp,445,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-PLN-01,office,SSH,tcp,22,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-PLN-01,office,SNMP,udp,161,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-PLN-01,office,NTP,udp,123,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PC-PLN-01,office,ICMP,icmp,,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PRINTER-01,office,MES-WEB,tcp,8080,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PRINTER-01,office,MySQL,tcp,3306,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PRINTER-01,office,OPC-UA,tcp,4840,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PRINTER-01,office,HTTP,tcp,80,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PRINTER-01,office,HTTPS,tcp,443,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PRINTER-01,office,SMB,tcp,445,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PRINTER-01,office,SSH,tcp,22,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PRINTER-01,office,SNMP,udp,161,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PRINTER-01,office,NTP,udp,123,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,PRINTER-01,office,ICMP,icmp,,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ROBOT-01,workshop,MES-APP,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+ROBOT-01,workshop,MES-APP,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+ROBOT-01,workshop,MES-APP,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+ROBOT-01,workshop,MES-APP,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,MES-APP,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,MES-APP,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,MES-APP,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,MES-APP,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,MES-APP,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+ROBOT-01,workshop,MES-APP,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+ROBOT-01,workshop,MES-DB,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+ROBOT-01,workshop,MES-DB,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+ROBOT-01,workshop,MES-DB,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+ROBOT-01,workshop,MES-DB,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,MES-DB,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,MES-DB,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,MES-DB,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,MES-DB,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,MES-DB,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+ROBOT-01,workshop,MES-DB,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+ROBOT-01,workshop,OPCUA-GW,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+ROBOT-01,workshop,OPCUA-GW,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+ROBOT-01,workshop,OPCUA-GW,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+ROBOT-01,workshop,OPCUA-GW,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,OPCUA-GW,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,OPCUA-GW,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,OPCUA-GW,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,OPCUA-GW,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,OPCUA-GW,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+ROBOT-01,workshop,OPCUA-GW,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+ROBOT-01,workshop,NTP-SRV,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+ROBOT-01,workshop,NTP-SRV,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+ROBOT-01,workshop,NTP-SRV,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+ROBOT-01,workshop,NTP-SRV,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,NTP-SRV,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,NTP-SRV,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,NTP-SRV,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,NTP-SRV,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ROBOT-01,workshop,NTP-SRV,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+ROBOT-01,workshop,NTP-SRV,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+ROBOT-01,workshop,NMS-01,mgmt,MES-WEB,tcp,8080,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-01,mgmt,MySQL,tcp,3306,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-01,mgmt,OPC-UA,tcp,4840,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-01,mgmt,HTTP,tcp,80,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-01,mgmt,HTTPS,tcp,443,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-01,mgmt,SMB,tcp,445,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-01,mgmt,SSH,tcp,22,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-01,mgmt,SNMP,udp,161,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-01,mgmt,NTP,udp,123,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-01,mgmt,ICMP,icmp,,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-02,mgmt,MES-WEB,tcp,8080,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-02,mgmt,MySQL,tcp,3306,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-02,mgmt,OPC-UA,tcp,4840,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-02,mgmt,HTTP,tcp,80,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-02,mgmt,HTTPS,tcp,443,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-02,mgmt,SMB,tcp,445,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-02,mgmt,SSH,tcp,22,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-02,mgmt,SNMP,udp,161,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-02,mgmt,NTP,udp,123,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,NMS-02,mgmt,ICMP,icmp,,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ROBOT-01,workshop,VENDOR-CLOUD,internet,MES-WEB,tcp,8080,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,VENDOR-CLOUD,internet,MySQL,tcp,3306,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,VENDOR-CLOUD,internet,OPC-UA,tcp,4840,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,VENDOR-CLOUD,internet,HTTP,tcp,80,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,VENDOR-CLOUD,internet,HTTPS,tcp,443,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,VENDOR-CLOUD,internet,SMB,tcp,445,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,VENDOR-CLOUD,internet,SSH,tcp,22,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,VENDOR-CLOUD,internet,SNMP,udp,161,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,VENDOR-CLOUD,internet,NTP,udp,123,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,VENDOR-CLOUD,internet,ICMP,icmp,,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,PATCH-SRV,internet,MES-WEB,tcp,8080,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,PATCH-SRV,internet,MySQL,tcp,3306,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,PATCH-SRV,internet,OPC-UA,tcp,4840,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,PATCH-SRV,internet,HTTP,tcp,80,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,PATCH-SRV,internet,HTTPS,tcp,443,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,PATCH-SRV,internet,SMB,tcp,445,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,PATCH-SRV,internet,SSH,tcp,22,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,PATCH-SRV,internet,SNMP,udp,161,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,PATCH-SRV,internet,NTP,udp,123,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ROBOT-01,workshop,PATCH-SRV,internet,ICMP,icmp,,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,PLC-01,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-01,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-01,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-01,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-01,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-01,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-01,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-01,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-01,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-01,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-02,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-02,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-02,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-02,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-02,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-02,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-02,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-02,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-02,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PLC-02,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ROBOT-01,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ROBOT-01,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ROBOT-01,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ROBOT-01,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ROBOT-01,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ROBOT-01,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ROBOT-01,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ROBOT-01,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ROBOT-01,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ROBOT-01,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ENG-WS,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ENG-WS,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ENG-WS,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ENG-WS,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ENG-WS,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ENG-WS,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ENG-WS,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ENG-WS,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ENG-WS,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+HMI-01,workshop,ENG-WS,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+HMI-01,workshop,PC-FIN-01,office,MES-WEB,tcp,8080,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-FIN-01,office,MySQL,tcp,3306,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-FIN-01,office,OPC-UA,tcp,4840,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-FIN-01,office,HTTP,tcp,80,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-FIN-01,office,HTTPS,tcp,443,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-FIN-01,office,SMB,tcp,445,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-FIN-01,office,SSH,tcp,22,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-FIN-01,office,SNMP,udp,161,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-FIN-01,office,NTP,udp,123,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-FIN-01,office,ICMP,icmp,,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-PLN-01,office,MES-WEB,tcp,8080,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-PLN-01,office,MySQL,tcp,3306,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-PLN-01,office,OPC-UA,tcp,4840,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-PLN-01,office,HTTP,tcp,80,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-PLN-01,office,HTTPS,tcp,443,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-PLN-01,office,SMB,tcp,445,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-PLN-01,office,SSH,tcp,22,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-PLN-01,office,SNMP,udp,161,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-PLN-01,office,NTP,udp,123,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PC-PLN-01,office,ICMP,icmp,,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PRINTER-01,office,MES-WEB,tcp,8080,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PRINTER-01,office,MySQL,tcp,3306,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PRINTER-01,office,OPC-UA,tcp,4840,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PRINTER-01,office,HTTP,tcp,80,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PRINTER-01,office,HTTPS,tcp,443,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PRINTER-01,office,SMB,tcp,445,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PRINTER-01,office,SSH,tcp,22,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PRINTER-01,office,SNMP,udp,161,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PRINTER-01,office,NTP,udp,123,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,PRINTER-01,office,ICMP,icmp,,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+HMI-01,workshop,MES-APP,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+HMI-01,workshop,MES-APP,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+HMI-01,workshop,MES-APP,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+HMI-01,workshop,MES-APP,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,MES-APP,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,MES-APP,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,MES-APP,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,MES-APP,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,MES-APP,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+HMI-01,workshop,MES-APP,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+HMI-01,workshop,MES-DB,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+HMI-01,workshop,MES-DB,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+HMI-01,workshop,MES-DB,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+HMI-01,workshop,MES-DB,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,MES-DB,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,MES-DB,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,MES-DB,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,MES-DB,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,MES-DB,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+HMI-01,workshop,MES-DB,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+HMI-01,workshop,OPCUA-GW,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+HMI-01,workshop,OPCUA-GW,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+HMI-01,workshop,OPCUA-GW,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+HMI-01,workshop,OPCUA-GW,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,OPCUA-GW,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,OPCUA-GW,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,OPCUA-GW,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,OPCUA-GW,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,OPCUA-GW,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+HMI-01,workshop,OPCUA-GW,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+HMI-01,workshop,NTP-SRV,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+HMI-01,workshop,NTP-SRV,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+HMI-01,workshop,NTP-SRV,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+HMI-01,workshop,NTP-SRV,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,NTP-SRV,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,NTP-SRV,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,NTP-SRV,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,NTP-SRV,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+HMI-01,workshop,NTP-SRV,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+HMI-01,workshop,NTP-SRV,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+HMI-01,workshop,NMS-01,mgmt,MES-WEB,tcp,8080,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-01,mgmt,MySQL,tcp,3306,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-01,mgmt,OPC-UA,tcp,4840,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-01,mgmt,HTTP,tcp,80,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-01,mgmt,HTTPS,tcp,443,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-01,mgmt,SMB,tcp,445,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-01,mgmt,SSH,tcp,22,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-01,mgmt,SNMP,udp,161,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-01,mgmt,NTP,udp,123,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-01,mgmt,ICMP,icmp,,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-02,mgmt,MES-WEB,tcp,8080,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-02,mgmt,MySQL,tcp,3306,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-02,mgmt,OPC-UA,tcp,4840,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-02,mgmt,HTTP,tcp,80,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-02,mgmt,HTTPS,tcp,443,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-02,mgmt,SMB,tcp,445,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-02,mgmt,SSH,tcp,22,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-02,mgmt,SNMP,udp,161,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-02,mgmt,NTP,udp,123,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,NMS-02,mgmt,ICMP,icmp,,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+HMI-01,workshop,VENDOR-CLOUD,internet,MES-WEB,tcp,8080,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,VENDOR-CLOUD,internet,MySQL,tcp,3306,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,VENDOR-CLOUD,internet,OPC-UA,tcp,4840,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,VENDOR-CLOUD,internet,HTTP,tcp,80,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,VENDOR-CLOUD,internet,HTTPS,tcp,443,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,VENDOR-CLOUD,internet,SMB,tcp,445,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,VENDOR-CLOUD,internet,SSH,tcp,22,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,VENDOR-CLOUD,internet,SNMP,udp,161,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,VENDOR-CLOUD,internet,NTP,udp,123,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,VENDOR-CLOUD,internet,ICMP,icmp,,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,PATCH-SRV,internet,MES-WEB,tcp,8080,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,PATCH-SRV,internet,MySQL,tcp,3306,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,PATCH-SRV,internet,OPC-UA,tcp,4840,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,PATCH-SRV,internet,HTTP,tcp,80,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,PATCH-SRV,internet,HTTPS,tcp,443,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,PATCH-SRV,internet,SMB,tcp,445,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,PATCH-SRV,internet,SSH,tcp,22,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,PATCH-SRV,internet,SNMP,udp,161,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,PATCH-SRV,internet,NTP,udp,123,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+HMI-01,workshop,PATCH-SRV,internet,ICMP,icmp,,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,PLC-01,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-01,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-01,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-01,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-01,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-01,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-01,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-01,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-01,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-01,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-02,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-02,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-02,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-02,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-02,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-02,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-02,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-02,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-02,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PLC-02,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,ROBOT-01,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,ROBOT-01,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,ROBOT-01,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,ROBOT-01,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,ROBOT-01,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,ROBOT-01,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,ROBOT-01,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,ROBOT-01,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,ROBOT-01,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,ROBOT-01,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,HMI-01,workshop,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,HMI-01,workshop,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,HMI-01,workshop,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,HMI-01,workshop,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,HMI-01,workshop,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,HMI-01,workshop,SMB,tcp,445,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,HMI-01,workshop,SSH,tcp,22,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,HMI-01,workshop,SNMP,udp,161,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,HMI-01,workshop,NTP,udp,123,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,HMI-01,workshop,ICMP,icmp,,permit,l2,,,同交换机二层直达
+ENG-WS,workshop,PC-FIN-01,office,MES-WEB,tcp,8080,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-FIN-01,office,MySQL,tcp,3306,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-FIN-01,office,OPC-UA,tcp,4840,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-FIN-01,office,HTTP,tcp,80,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-FIN-01,office,HTTPS,tcp,443,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-FIN-01,office,SMB,tcp,445,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-FIN-01,office,SSH,tcp,22,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-FIN-01,office,SNMP,udp,161,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-FIN-01,office,NTP,udp,123,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-FIN-01,office,ICMP,icmp,,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-PLN-01,office,MES-WEB,tcp,8080,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-PLN-01,office,MySQL,tcp,3306,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-PLN-01,office,OPC-UA,tcp,4840,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-PLN-01,office,HTTP,tcp,80,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-PLN-01,office,HTTPS,tcp,443,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-PLN-01,office,SMB,tcp,445,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-PLN-01,office,SSH,tcp,22,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-PLN-01,office,SNMP,udp,161,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-PLN-01,office,NTP,udp,123,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PC-PLN-01,office,ICMP,icmp,,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PRINTER-01,office,MES-WEB,tcp,8080,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PRINTER-01,office,MySQL,tcp,3306,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PRINTER-01,office,OPC-UA,tcp,4840,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PRINTER-01,office,HTTP,tcp,80,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PRINTER-01,office,HTTPS,tcp,443,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PRINTER-01,office,SMB,tcp,445,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PRINTER-01,office,SSH,tcp,22,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PRINTER-01,office,SNMP,udp,161,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PRINTER-01,office,NTP,udp,123,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,PRINTER-01,office,ICMP,icmp,,deny,l3,40,,被策略 40 拒绝：生产网与办公网必须隔离
+ENG-WS,workshop,MES-APP,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+ENG-WS,workshop,MES-APP,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+ENG-WS,workshop,MES-APP,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+ENG-WS,workshop,MES-APP,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,MES-APP,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,MES-APP,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,MES-APP,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,MES-APP,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,MES-APP,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+ENG-WS,workshop,MES-APP,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+ENG-WS,workshop,MES-DB,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+ENG-WS,workshop,MES-DB,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+ENG-WS,workshop,MES-DB,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+ENG-WS,workshop,MES-DB,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,MES-DB,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,MES-DB,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,MES-DB,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,MES-DB,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,MES-DB,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+ENG-WS,workshop,MES-DB,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+ENG-WS,workshop,OPCUA-GW,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+ENG-WS,workshop,OPCUA-GW,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+ENG-WS,workshop,OPCUA-GW,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+ENG-WS,workshop,OPCUA-GW,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,OPCUA-GW,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,OPCUA-GW,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,OPCUA-GW,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,OPCUA-GW,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,OPCUA-GW,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+ENG-WS,workshop,OPCUA-GW,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+ENG-WS,workshop,NTP-SRV,server,MES-WEB,tcp,8080,permit,l3,10,,策略 10 放通
+ENG-WS,workshop,NTP-SRV,server,MySQL,tcp,3306,permit,l3,10,,策略 10 放通
+ENG-WS,workshop,NTP-SRV,server,OPC-UA,tcp,4840,permit,l3,10,,策略 10 放通
+ENG-WS,workshop,NTP-SRV,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,NTP-SRV,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,NTP-SRV,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,NTP-SRV,server,SSH,tcp,22,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,NTP-SRV,server,SNMP,udp,161,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+ENG-WS,workshop,NTP-SRV,server,NTP,udp,123,permit,l3,11,,策略 11 放通
+ENG-WS,workshop,NTP-SRV,server,ICMP,icmp,,permit,l3,12,,策略 12 放通
+ENG-WS,workshop,NMS-01,mgmt,MES-WEB,tcp,8080,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-01,mgmt,MySQL,tcp,3306,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-01,mgmt,OPC-UA,tcp,4840,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-01,mgmt,HTTP,tcp,80,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-01,mgmt,HTTPS,tcp,443,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-01,mgmt,SMB,tcp,445,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-01,mgmt,SSH,tcp,22,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-01,mgmt,SNMP,udp,161,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-01,mgmt,NTP,udp,123,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-01,mgmt,ICMP,icmp,,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-02,mgmt,MES-WEB,tcp,8080,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-02,mgmt,MySQL,tcp,3306,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-02,mgmt,OPC-UA,tcp,4840,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-02,mgmt,HTTP,tcp,80,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-02,mgmt,HTTPS,tcp,443,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-02,mgmt,SMB,tcp,445,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-02,mgmt,SSH,tcp,22,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-02,mgmt,SNMP,udp,161,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-02,mgmt,NTP,udp,123,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,NMS-02,mgmt,ICMP,icmp,,deny,l3,43,,被策略 43 拒绝：生产终端不得进入设备管理网
+ENG-WS,workshop,VENDOR-CLOUD,internet,MES-WEB,tcp,8080,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,VENDOR-CLOUD,internet,MySQL,tcp,3306,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,VENDOR-CLOUD,internet,OPC-UA,tcp,4840,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,VENDOR-CLOUD,internet,HTTP,tcp,80,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,VENDOR-CLOUD,internet,HTTPS,tcp,443,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,VENDOR-CLOUD,internet,SMB,tcp,445,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,VENDOR-CLOUD,internet,SSH,tcp,22,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,VENDOR-CLOUD,internet,SNMP,udp,161,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,VENDOR-CLOUD,internet,NTP,udp,123,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,VENDOR-CLOUD,internet,ICMP,icmp,,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,PATCH-SRV,internet,MES-WEB,tcp,8080,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,PATCH-SRV,internet,MySQL,tcp,3306,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,PATCH-SRV,internet,OPC-UA,tcp,4840,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,PATCH-SRV,internet,HTTP,tcp,80,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,PATCH-SRV,internet,HTTPS,tcp,443,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,PATCH-SRV,internet,SMB,tcp,445,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,PATCH-SRV,internet,SSH,tcp,22,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,PATCH-SRV,internet,SNMP,udp,161,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,PATCH-SRV,internet,NTP,udp,123,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+ENG-WS,workshop,PATCH-SRV,internet,ICMP,icmp,,deny,l3,45,,被策略 45 拒绝：生产网禁止访问互联网
+PC-FIN-01,office,PLC-01,workshop,MES-WEB,tcp,8080,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-01,workshop,MySQL,tcp,3306,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-01,workshop,OPC-UA,tcp,4840,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-01,workshop,HTTP,tcp,80,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-01,workshop,HTTPS,tcp,443,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-01,workshop,SMB,tcp,445,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-01,workshop,SSH,tcp,22,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-01,workshop,SNMP,udp,161,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-01,workshop,NTP,udp,123,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-01,workshop,ICMP,icmp,,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-02,workshop,MES-WEB,tcp,8080,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-02,workshop,MySQL,tcp,3306,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-02,workshop,OPC-UA,tcp,4840,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-02,workshop,HTTP,tcp,80,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-02,workshop,HTTPS,tcp,443,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-02,workshop,SMB,tcp,445,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-02,workshop,SSH,tcp,22,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-02,workshop,SNMP,udp,161,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-02,workshop,NTP,udp,123,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PLC-02,workshop,ICMP,icmp,,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ROBOT-01,workshop,MES-WEB,tcp,8080,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ROBOT-01,workshop,MySQL,tcp,3306,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ROBOT-01,workshop,OPC-UA,tcp,4840,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ROBOT-01,workshop,HTTP,tcp,80,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ROBOT-01,workshop,HTTPS,tcp,443,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ROBOT-01,workshop,SMB,tcp,445,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ROBOT-01,workshop,SSH,tcp,22,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ROBOT-01,workshop,SNMP,udp,161,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ROBOT-01,workshop,NTP,udp,123,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ROBOT-01,workshop,ICMP,icmp,,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,HMI-01,workshop,MES-WEB,tcp,8080,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,HMI-01,workshop,MySQL,tcp,3306,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,HMI-01,workshop,OPC-UA,tcp,4840,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,HMI-01,workshop,HTTP,tcp,80,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,HMI-01,workshop,HTTPS,tcp,443,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,HMI-01,workshop,SMB,tcp,445,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,HMI-01,workshop,SSH,tcp,22,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,HMI-01,workshop,SNMP,udp,161,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,HMI-01,workshop,NTP,udp,123,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,HMI-01,workshop,ICMP,icmp,,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ENG-WS,workshop,MES-WEB,tcp,8080,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ENG-WS,workshop,MySQL,tcp,3306,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ENG-WS,workshop,OPC-UA,tcp,4840,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ENG-WS,workshop,HTTP,tcp,80,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ENG-WS,workshop,HTTPS,tcp,443,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ENG-WS,workshop,SMB,tcp,445,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ENG-WS,workshop,SSH,tcp,22,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ENG-WS,workshop,SNMP,udp,161,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ENG-WS,workshop,NTP,udp,123,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,ENG-WS,workshop,ICMP,icmp,,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-FIN-01,office,PC-PLN-01,office,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PC-PLN-01,office,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PC-PLN-01,office,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PC-PLN-01,office,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PC-PLN-01,office,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PC-PLN-01,office,SMB,tcp,445,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PC-PLN-01,office,SSH,tcp,22,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PC-PLN-01,office,SNMP,udp,161,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PC-PLN-01,office,NTP,udp,123,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PC-PLN-01,office,ICMP,icmp,,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PRINTER-01,office,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PRINTER-01,office,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PRINTER-01,office,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PRINTER-01,office,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PRINTER-01,office,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PRINTER-01,office,SMB,tcp,445,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PRINTER-01,office,SSH,tcp,22,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PRINTER-01,office,SNMP,udp,161,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PRINTER-01,office,NTP,udp,123,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,PRINTER-01,office,ICMP,icmp,,permit,l2,,,同交换机二层直达
+PC-FIN-01,office,MES-APP,server,MES-WEB,tcp,8080,permit,l3,20,,策略 20 放通
+PC-FIN-01,office,MES-APP,server,MySQL,tcp,3306,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,MES-APP,server,OPC-UA,tcp,4840,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,MES-APP,server,HTTP,tcp,80,permit,l3,20,,策略 20 放通
+PC-FIN-01,office,MES-APP,server,HTTPS,tcp,443,permit,l3,20,,策略 20 放通
+PC-FIN-01,office,MES-APP,server,SMB,tcp,445,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,MES-APP,server,SSH,tcp,22,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,MES-APP,server,SNMP,udp,161,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,MES-APP,server,NTP,udp,123,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,MES-APP,server,ICMP,icmp,,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,MES-DB,server,MES-WEB,tcp,8080,permit,l3,20,,策略 20 放通
+PC-FIN-01,office,MES-DB,server,MySQL,tcp,3306,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,MES-DB,server,OPC-UA,tcp,4840,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,MES-DB,server,HTTP,tcp,80,permit,l3,20,,策略 20 放通
+PC-FIN-01,office,MES-DB,server,HTTPS,tcp,443,permit,l3,20,,策略 20 放通
+PC-FIN-01,office,MES-DB,server,SMB,tcp,445,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,MES-DB,server,SSH,tcp,22,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,MES-DB,server,SNMP,udp,161,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,MES-DB,server,NTP,udp,123,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,MES-DB,server,ICMP,icmp,,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,OPCUA-GW,server,MES-WEB,tcp,8080,permit,l3,20,,策略 20 放通
+PC-FIN-01,office,OPCUA-GW,server,MySQL,tcp,3306,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,OPCUA-GW,server,OPC-UA,tcp,4840,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,OPCUA-GW,server,HTTP,tcp,80,permit,l3,20,,策略 20 放通
+PC-FIN-01,office,OPCUA-GW,server,HTTPS,tcp,443,permit,l3,20,,策略 20 放通
+PC-FIN-01,office,OPCUA-GW,server,SMB,tcp,445,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,OPCUA-GW,server,SSH,tcp,22,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,OPCUA-GW,server,SNMP,udp,161,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,OPCUA-GW,server,NTP,udp,123,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,OPCUA-GW,server,ICMP,icmp,,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,NTP-SRV,server,MES-WEB,tcp,8080,permit,l3,20,,策略 20 放通
+PC-FIN-01,office,NTP-SRV,server,MySQL,tcp,3306,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,NTP-SRV,server,OPC-UA,tcp,4840,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,NTP-SRV,server,HTTP,tcp,80,permit,l3,20,,策略 20 放通
+PC-FIN-01,office,NTP-SRV,server,HTTPS,tcp,443,permit,l3,20,,策略 20 放通
+PC-FIN-01,office,NTP-SRV,server,SMB,tcp,445,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,NTP-SRV,server,SSH,tcp,22,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,NTP-SRV,server,SNMP,udp,161,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,NTP-SRV,server,NTP,udp,123,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,NTP-SRV,server,ICMP,icmp,,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-FIN-01,office,NMS-01,mgmt,MES-WEB,tcp,8080,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-01,mgmt,MySQL,tcp,3306,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-01,mgmt,OPC-UA,tcp,4840,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-01,mgmt,HTTP,tcp,80,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-01,mgmt,HTTPS,tcp,443,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-01,mgmt,SMB,tcp,445,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-01,mgmt,SSH,tcp,22,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-01,mgmt,SNMP,udp,161,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-01,mgmt,NTP,udp,123,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-01,mgmt,ICMP,icmp,,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-02,mgmt,MES-WEB,tcp,8080,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-02,mgmt,MySQL,tcp,3306,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-02,mgmt,OPC-UA,tcp,4840,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-02,mgmt,HTTP,tcp,80,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-02,mgmt,HTTPS,tcp,443,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-02,mgmt,SMB,tcp,445,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-02,mgmt,SSH,tcp,22,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-02,mgmt,SNMP,udp,161,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-02,mgmt,NTP,udp,123,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,NMS-02,mgmt,ICMP,icmp,,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-FIN-01,office,VENDOR-CLOUD,internet,MES-WEB,tcp,8080,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,VENDOR-CLOUD,internet,MySQL,tcp,3306,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,VENDOR-CLOUD,internet,OPC-UA,tcp,4840,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,VENDOR-CLOUD,internet,HTTP,tcp,80,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,VENDOR-CLOUD,internet,HTTPS,tcp,443,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,VENDOR-CLOUD,internet,SMB,tcp,445,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,VENDOR-CLOUD,internet,SSH,tcp,22,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,VENDOR-CLOUD,internet,SNMP,udp,161,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,VENDOR-CLOUD,internet,NTP,udp,123,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,VENDOR-CLOUD,internet,ICMP,icmp,,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,PATCH-SRV,internet,MES-WEB,tcp,8080,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,PATCH-SRV,internet,MySQL,tcp,3306,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,PATCH-SRV,internet,OPC-UA,tcp,4840,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,PATCH-SRV,internet,HTTP,tcp,80,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,PATCH-SRV,internet,HTTPS,tcp,443,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,PATCH-SRV,internet,SMB,tcp,445,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,PATCH-SRV,internet,SSH,tcp,22,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,PATCH-SRV,internet,SNMP,udp,161,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,PATCH-SRV,internet,NTP,udp,123,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-FIN-01,office,PATCH-SRV,internet,ICMP,icmp,,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,PLC-01,workshop,MES-WEB,tcp,8080,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-01,workshop,MySQL,tcp,3306,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-01,workshop,OPC-UA,tcp,4840,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-01,workshop,HTTP,tcp,80,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-01,workshop,HTTPS,tcp,443,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-01,workshop,SMB,tcp,445,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-01,workshop,SSH,tcp,22,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-01,workshop,SNMP,udp,161,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-01,workshop,NTP,udp,123,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-01,workshop,ICMP,icmp,,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-02,workshop,MES-WEB,tcp,8080,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-02,workshop,MySQL,tcp,3306,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-02,workshop,OPC-UA,tcp,4840,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-02,workshop,HTTP,tcp,80,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-02,workshop,HTTPS,tcp,443,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-02,workshop,SMB,tcp,445,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-02,workshop,SSH,tcp,22,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-02,workshop,SNMP,udp,161,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-02,workshop,NTP,udp,123,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PLC-02,workshop,ICMP,icmp,,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ROBOT-01,workshop,MES-WEB,tcp,8080,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ROBOT-01,workshop,MySQL,tcp,3306,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ROBOT-01,workshop,OPC-UA,tcp,4840,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ROBOT-01,workshop,HTTP,tcp,80,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ROBOT-01,workshop,HTTPS,tcp,443,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ROBOT-01,workshop,SMB,tcp,445,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ROBOT-01,workshop,SSH,tcp,22,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ROBOT-01,workshop,SNMP,udp,161,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ROBOT-01,workshop,NTP,udp,123,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ROBOT-01,workshop,ICMP,icmp,,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,HMI-01,workshop,MES-WEB,tcp,8080,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,HMI-01,workshop,MySQL,tcp,3306,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,HMI-01,workshop,OPC-UA,tcp,4840,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,HMI-01,workshop,HTTP,tcp,80,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,HMI-01,workshop,HTTPS,tcp,443,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,HMI-01,workshop,SMB,tcp,445,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,HMI-01,workshop,SSH,tcp,22,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,HMI-01,workshop,SNMP,udp,161,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,HMI-01,workshop,NTP,udp,123,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,HMI-01,workshop,ICMP,icmp,,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ENG-WS,workshop,MES-WEB,tcp,8080,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ENG-WS,workshop,MySQL,tcp,3306,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ENG-WS,workshop,OPC-UA,tcp,4840,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ENG-WS,workshop,HTTP,tcp,80,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ENG-WS,workshop,HTTPS,tcp,443,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ENG-WS,workshop,SMB,tcp,445,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ENG-WS,workshop,SSH,tcp,22,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ENG-WS,workshop,SNMP,udp,161,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ENG-WS,workshop,NTP,udp,123,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,ENG-WS,workshop,ICMP,icmp,,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PC-PLN-01,office,PC-FIN-01,office,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PC-FIN-01,office,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PC-FIN-01,office,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PC-FIN-01,office,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PC-FIN-01,office,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PC-FIN-01,office,SMB,tcp,445,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PC-FIN-01,office,SSH,tcp,22,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PC-FIN-01,office,SNMP,udp,161,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PC-FIN-01,office,NTP,udp,123,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PC-FIN-01,office,ICMP,icmp,,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PRINTER-01,office,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PRINTER-01,office,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PRINTER-01,office,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PRINTER-01,office,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PRINTER-01,office,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PRINTER-01,office,SMB,tcp,445,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PRINTER-01,office,SSH,tcp,22,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PRINTER-01,office,SNMP,udp,161,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PRINTER-01,office,NTP,udp,123,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,PRINTER-01,office,ICMP,icmp,,permit,l2,,,同交换机二层直达
+PC-PLN-01,office,MES-APP,server,MES-WEB,tcp,8080,permit,l3,20,,策略 20 放通
+PC-PLN-01,office,MES-APP,server,MySQL,tcp,3306,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,MES-APP,server,OPC-UA,tcp,4840,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,MES-APP,server,HTTP,tcp,80,permit,l3,20,,策略 20 放通
+PC-PLN-01,office,MES-APP,server,HTTPS,tcp,443,permit,l3,20,,策略 20 放通
+PC-PLN-01,office,MES-APP,server,SMB,tcp,445,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,MES-APP,server,SSH,tcp,22,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,MES-APP,server,SNMP,udp,161,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,MES-APP,server,NTP,udp,123,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,MES-APP,server,ICMP,icmp,,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,MES-DB,server,MES-WEB,tcp,8080,permit,l3,20,,策略 20 放通
+PC-PLN-01,office,MES-DB,server,MySQL,tcp,3306,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,MES-DB,server,OPC-UA,tcp,4840,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,MES-DB,server,HTTP,tcp,80,permit,l3,20,,策略 20 放通
+PC-PLN-01,office,MES-DB,server,HTTPS,tcp,443,permit,l3,20,,策略 20 放通
+PC-PLN-01,office,MES-DB,server,SMB,tcp,445,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,MES-DB,server,SSH,tcp,22,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,MES-DB,server,SNMP,udp,161,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,MES-DB,server,NTP,udp,123,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,MES-DB,server,ICMP,icmp,,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,OPCUA-GW,server,MES-WEB,tcp,8080,permit,l3,20,,策略 20 放通
+PC-PLN-01,office,OPCUA-GW,server,MySQL,tcp,3306,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,OPCUA-GW,server,OPC-UA,tcp,4840,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,OPCUA-GW,server,HTTP,tcp,80,permit,l3,20,,策略 20 放通
+PC-PLN-01,office,OPCUA-GW,server,HTTPS,tcp,443,permit,l3,20,,策略 20 放通
+PC-PLN-01,office,OPCUA-GW,server,SMB,tcp,445,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,OPCUA-GW,server,SSH,tcp,22,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,OPCUA-GW,server,SNMP,udp,161,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,OPCUA-GW,server,NTP,udp,123,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,OPCUA-GW,server,ICMP,icmp,,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,NTP-SRV,server,MES-WEB,tcp,8080,permit,l3,20,,策略 20 放通
+PC-PLN-01,office,NTP-SRV,server,MySQL,tcp,3306,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,NTP-SRV,server,OPC-UA,tcp,4840,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,NTP-SRV,server,HTTP,tcp,80,permit,l3,20,,策略 20 放通
+PC-PLN-01,office,NTP-SRV,server,HTTPS,tcp,443,permit,l3,20,,策略 20 放通
+PC-PLN-01,office,NTP-SRV,server,SMB,tcp,445,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,NTP-SRV,server,SSH,tcp,22,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,NTP-SRV,server,SNMP,udp,161,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,NTP-SRV,server,NTP,udp,123,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,NTP-SRV,server,ICMP,icmp,,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PC-PLN-01,office,NMS-01,mgmt,MES-WEB,tcp,8080,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-01,mgmt,MySQL,tcp,3306,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-01,mgmt,OPC-UA,tcp,4840,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-01,mgmt,HTTP,tcp,80,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-01,mgmt,HTTPS,tcp,443,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-01,mgmt,SMB,tcp,445,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-01,mgmt,SSH,tcp,22,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-01,mgmt,SNMP,udp,161,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-01,mgmt,NTP,udp,123,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-01,mgmt,ICMP,icmp,,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-02,mgmt,MES-WEB,tcp,8080,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-02,mgmt,MySQL,tcp,3306,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-02,mgmt,OPC-UA,tcp,4840,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-02,mgmt,HTTP,tcp,80,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-02,mgmt,HTTPS,tcp,443,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-02,mgmt,SMB,tcp,445,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-02,mgmt,SSH,tcp,22,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-02,mgmt,SNMP,udp,161,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-02,mgmt,NTP,udp,123,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,NMS-02,mgmt,ICMP,icmp,,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PC-PLN-01,office,VENDOR-CLOUD,internet,MES-WEB,tcp,8080,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,VENDOR-CLOUD,internet,MySQL,tcp,3306,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,VENDOR-CLOUD,internet,OPC-UA,tcp,4840,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,VENDOR-CLOUD,internet,HTTP,tcp,80,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,VENDOR-CLOUD,internet,HTTPS,tcp,443,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,VENDOR-CLOUD,internet,SMB,tcp,445,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,VENDOR-CLOUD,internet,SSH,tcp,22,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,VENDOR-CLOUD,internet,SNMP,udp,161,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,VENDOR-CLOUD,internet,NTP,udp,123,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,VENDOR-CLOUD,internet,ICMP,icmp,,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,PATCH-SRV,internet,MES-WEB,tcp,8080,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,PATCH-SRV,internet,MySQL,tcp,3306,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,PATCH-SRV,internet,OPC-UA,tcp,4840,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,PATCH-SRV,internet,HTTP,tcp,80,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,PATCH-SRV,internet,HTTPS,tcp,443,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,PATCH-SRV,internet,SMB,tcp,445,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,PATCH-SRV,internet,SSH,tcp,22,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,PATCH-SRV,internet,SNMP,udp,161,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,PATCH-SRV,internet,NTP,udp,123,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PC-PLN-01,office,PATCH-SRV,internet,ICMP,icmp,,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,PLC-01,workshop,MES-WEB,tcp,8080,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-01,workshop,MySQL,tcp,3306,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-01,workshop,OPC-UA,tcp,4840,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-01,workshop,HTTP,tcp,80,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-01,workshop,HTTPS,tcp,443,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-01,workshop,SMB,tcp,445,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-01,workshop,SSH,tcp,22,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-01,workshop,SNMP,udp,161,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-01,workshop,NTP,udp,123,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-01,workshop,ICMP,icmp,,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-02,workshop,MES-WEB,tcp,8080,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-02,workshop,MySQL,tcp,3306,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-02,workshop,OPC-UA,tcp,4840,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-02,workshop,HTTP,tcp,80,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-02,workshop,HTTPS,tcp,443,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-02,workshop,SMB,tcp,445,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-02,workshop,SSH,tcp,22,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-02,workshop,SNMP,udp,161,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-02,workshop,NTP,udp,123,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PLC-02,workshop,ICMP,icmp,,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ROBOT-01,workshop,MES-WEB,tcp,8080,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ROBOT-01,workshop,MySQL,tcp,3306,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ROBOT-01,workshop,OPC-UA,tcp,4840,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ROBOT-01,workshop,HTTP,tcp,80,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ROBOT-01,workshop,HTTPS,tcp,443,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ROBOT-01,workshop,SMB,tcp,445,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ROBOT-01,workshop,SSH,tcp,22,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ROBOT-01,workshop,SNMP,udp,161,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ROBOT-01,workshop,NTP,udp,123,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ROBOT-01,workshop,ICMP,icmp,,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,HMI-01,workshop,MES-WEB,tcp,8080,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,HMI-01,workshop,MySQL,tcp,3306,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,HMI-01,workshop,OPC-UA,tcp,4840,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,HMI-01,workshop,HTTP,tcp,80,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,HMI-01,workshop,HTTPS,tcp,443,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,HMI-01,workshop,SMB,tcp,445,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,HMI-01,workshop,SSH,tcp,22,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,HMI-01,workshop,SNMP,udp,161,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,HMI-01,workshop,NTP,udp,123,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,HMI-01,workshop,ICMP,icmp,,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ENG-WS,workshop,MES-WEB,tcp,8080,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ENG-WS,workshop,MySQL,tcp,3306,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ENG-WS,workshop,OPC-UA,tcp,4840,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ENG-WS,workshop,HTTP,tcp,80,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ENG-WS,workshop,HTTPS,tcp,443,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ENG-WS,workshop,SMB,tcp,445,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ENG-WS,workshop,SSH,tcp,22,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ENG-WS,workshop,SNMP,udp,161,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ENG-WS,workshop,NTP,udp,123,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,ENG-WS,workshop,ICMP,icmp,,deny,l3,41,,被策略 41 拒绝：办公网不得访问生产设备
+PRINTER-01,office,PC-FIN-01,office,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-FIN-01,office,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-FIN-01,office,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-FIN-01,office,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-FIN-01,office,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-FIN-01,office,SMB,tcp,445,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-FIN-01,office,SSH,tcp,22,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-FIN-01,office,SNMP,udp,161,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-FIN-01,office,NTP,udp,123,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-FIN-01,office,ICMP,icmp,,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-PLN-01,office,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-PLN-01,office,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-PLN-01,office,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-PLN-01,office,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-PLN-01,office,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-PLN-01,office,SMB,tcp,445,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-PLN-01,office,SSH,tcp,22,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-PLN-01,office,SNMP,udp,161,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-PLN-01,office,NTP,udp,123,permit,l2,,,同交换机二层直达
+PRINTER-01,office,PC-PLN-01,office,ICMP,icmp,,permit,l2,,,同交换机二层直达
+PRINTER-01,office,MES-APP,server,MES-WEB,tcp,8080,permit,l3,20,,策略 20 放通
+PRINTER-01,office,MES-APP,server,MySQL,tcp,3306,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,MES-APP,server,OPC-UA,tcp,4840,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,MES-APP,server,HTTP,tcp,80,permit,l3,20,,策略 20 放通
+PRINTER-01,office,MES-APP,server,HTTPS,tcp,443,permit,l3,20,,策略 20 放通
+PRINTER-01,office,MES-APP,server,SMB,tcp,445,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,MES-APP,server,SSH,tcp,22,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,MES-APP,server,SNMP,udp,161,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,MES-APP,server,NTP,udp,123,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,MES-APP,server,ICMP,icmp,,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,MES-DB,server,MES-WEB,tcp,8080,permit,l3,20,,策略 20 放通
+PRINTER-01,office,MES-DB,server,MySQL,tcp,3306,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,MES-DB,server,OPC-UA,tcp,4840,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,MES-DB,server,HTTP,tcp,80,permit,l3,20,,策略 20 放通
+PRINTER-01,office,MES-DB,server,HTTPS,tcp,443,permit,l3,20,,策略 20 放通
+PRINTER-01,office,MES-DB,server,SMB,tcp,445,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,MES-DB,server,SSH,tcp,22,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,MES-DB,server,SNMP,udp,161,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,MES-DB,server,NTP,udp,123,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,MES-DB,server,ICMP,icmp,,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,OPCUA-GW,server,MES-WEB,tcp,8080,permit,l3,20,,策略 20 放通
+PRINTER-01,office,OPCUA-GW,server,MySQL,tcp,3306,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,OPCUA-GW,server,OPC-UA,tcp,4840,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,OPCUA-GW,server,HTTP,tcp,80,permit,l3,20,,策略 20 放通
+PRINTER-01,office,OPCUA-GW,server,HTTPS,tcp,443,permit,l3,20,,策略 20 放通
+PRINTER-01,office,OPCUA-GW,server,SMB,tcp,445,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,OPCUA-GW,server,SSH,tcp,22,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,OPCUA-GW,server,SNMP,udp,161,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,OPCUA-GW,server,NTP,udp,123,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,OPCUA-GW,server,ICMP,icmp,,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,NTP-SRV,server,MES-WEB,tcp,8080,permit,l3,20,,策略 20 放通
+PRINTER-01,office,NTP-SRV,server,MySQL,tcp,3306,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,NTP-SRV,server,OPC-UA,tcp,4840,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,NTP-SRV,server,HTTP,tcp,80,permit,l3,20,,策略 20 放通
+PRINTER-01,office,NTP-SRV,server,HTTPS,tcp,443,permit,l3,20,,策略 20 放通
+PRINTER-01,office,NTP-SRV,server,SMB,tcp,445,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,NTP-SRV,server,SSH,tcp,22,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,NTP-SRV,server,SNMP,udp,161,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,NTP-SRV,server,NTP,udp,123,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,NTP-SRV,server,ICMP,icmp,,deny,l3,44,,被策略 44 拒绝：办公区不得访问数据库等未放通服务
+PRINTER-01,office,NMS-01,mgmt,MES-WEB,tcp,8080,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-01,mgmt,MySQL,tcp,3306,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-01,mgmt,OPC-UA,tcp,4840,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-01,mgmt,HTTP,tcp,80,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-01,mgmt,HTTPS,tcp,443,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-01,mgmt,SMB,tcp,445,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-01,mgmt,SSH,tcp,22,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-01,mgmt,SNMP,udp,161,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-01,mgmt,NTP,udp,123,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-01,mgmt,ICMP,icmp,,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-02,mgmt,MES-WEB,tcp,8080,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-02,mgmt,MySQL,tcp,3306,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-02,mgmt,OPC-UA,tcp,4840,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-02,mgmt,HTTP,tcp,80,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-02,mgmt,HTTPS,tcp,443,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-02,mgmt,SMB,tcp,445,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-02,mgmt,SSH,tcp,22,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-02,mgmt,SNMP,udp,161,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-02,mgmt,NTP,udp,123,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,NMS-02,mgmt,ICMP,icmp,,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+PRINTER-01,office,VENDOR-CLOUD,internet,MES-WEB,tcp,8080,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,VENDOR-CLOUD,internet,MySQL,tcp,3306,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,VENDOR-CLOUD,internet,OPC-UA,tcp,4840,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,VENDOR-CLOUD,internet,HTTP,tcp,80,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,VENDOR-CLOUD,internet,HTTPS,tcp,443,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,VENDOR-CLOUD,internet,SMB,tcp,445,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,VENDOR-CLOUD,internet,SSH,tcp,22,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,VENDOR-CLOUD,internet,SNMP,udp,161,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,VENDOR-CLOUD,internet,NTP,udp,123,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,VENDOR-CLOUD,internet,ICMP,icmp,,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,PATCH-SRV,internet,MES-WEB,tcp,8080,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,PATCH-SRV,internet,MySQL,tcp,3306,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,PATCH-SRV,internet,OPC-UA,tcp,4840,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,PATCH-SRV,internet,HTTP,tcp,80,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,PATCH-SRV,internet,HTTPS,tcp,443,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,PATCH-SRV,internet,SMB,tcp,445,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,PATCH-SRV,internet,SSH,tcp,22,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,PATCH-SRV,internet,SNMP,udp,161,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,PATCH-SRV,internet,NTP,udp,123,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+PRINTER-01,office,PATCH-SRV,internet,ICMP,icmp,,permit,l3,50,是,策略 50 放通，且经 NAT 出网
+MES-APP,server,PLC-01,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-01,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-01,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-01,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-01,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-01,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-01,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-01,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-01,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-01,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-02,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-02,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-02,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-02,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-02,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-02,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-02,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-02,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-02,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PLC-02,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ROBOT-01,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ROBOT-01,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ROBOT-01,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ROBOT-01,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ROBOT-01,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ROBOT-01,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ROBOT-01,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ROBOT-01,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ROBOT-01,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ROBOT-01,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,HMI-01,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,HMI-01,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,HMI-01,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,HMI-01,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,HMI-01,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,HMI-01,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,HMI-01,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,HMI-01,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,HMI-01,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,HMI-01,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ENG-WS,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ENG-WS,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ENG-WS,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ENG-WS,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ENG-WS,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ENG-WS,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ENG-WS,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ENG-WS,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ENG-WS,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,ENG-WS,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-APP,server,PC-FIN-01,office,MES-WEB,tcp,8080,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-FIN-01,office,MySQL,tcp,3306,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-FIN-01,office,OPC-UA,tcp,4840,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-FIN-01,office,HTTP,tcp,80,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-FIN-01,office,HTTPS,tcp,443,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-FIN-01,office,SMB,tcp,445,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-FIN-01,office,SSH,tcp,22,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-FIN-01,office,SNMP,udp,161,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-FIN-01,office,NTP,udp,123,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-FIN-01,office,ICMP,icmp,,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-PLN-01,office,MES-WEB,tcp,8080,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-PLN-01,office,MySQL,tcp,3306,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-PLN-01,office,OPC-UA,tcp,4840,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-PLN-01,office,HTTP,tcp,80,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-PLN-01,office,HTTPS,tcp,443,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-PLN-01,office,SMB,tcp,445,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-PLN-01,office,SSH,tcp,22,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-PLN-01,office,SNMP,udp,161,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-PLN-01,office,NTP,udp,123,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PC-PLN-01,office,ICMP,icmp,,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PRINTER-01,office,MES-WEB,tcp,8080,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PRINTER-01,office,MySQL,tcp,3306,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PRINTER-01,office,OPC-UA,tcp,4840,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PRINTER-01,office,HTTP,tcp,80,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PRINTER-01,office,HTTPS,tcp,443,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PRINTER-01,office,SMB,tcp,445,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PRINTER-01,office,SSH,tcp,22,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PRINTER-01,office,SNMP,udp,161,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PRINTER-01,office,NTP,udp,123,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,PRINTER-01,office,ICMP,icmp,,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-APP,server,MES-DB,server,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+MES-APP,server,MES-DB,server,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+MES-APP,server,MES-DB,server,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+MES-APP,server,MES-DB,server,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+MES-APP,server,MES-DB,server,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+MES-APP,server,MES-DB,server,SMB,tcp,445,permit,l2,,,同交换机二层直达
+MES-APP,server,MES-DB,server,SSH,tcp,22,permit,l2,,,同交换机二层直达
+MES-APP,server,MES-DB,server,SNMP,udp,161,permit,l2,,,同交换机二层直达
+MES-APP,server,MES-DB,server,NTP,udp,123,permit,l2,,,同交换机二层直达
+MES-APP,server,MES-DB,server,ICMP,icmp,,permit,l2,,,同交换机二层直达
+MES-APP,server,OPCUA-GW,server,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+MES-APP,server,OPCUA-GW,server,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+MES-APP,server,OPCUA-GW,server,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+MES-APP,server,OPCUA-GW,server,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+MES-APP,server,OPCUA-GW,server,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+MES-APP,server,OPCUA-GW,server,SMB,tcp,445,permit,l2,,,同交换机二层直达
+MES-APP,server,OPCUA-GW,server,SSH,tcp,22,permit,l2,,,同交换机二层直达
+MES-APP,server,OPCUA-GW,server,SNMP,udp,161,permit,l2,,,同交换机二层直达
+MES-APP,server,OPCUA-GW,server,NTP,udp,123,permit,l2,,,同交换机二层直达
+MES-APP,server,OPCUA-GW,server,ICMP,icmp,,permit,l2,,,同交换机二层直达
+MES-APP,server,NTP-SRV,server,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+MES-APP,server,NTP-SRV,server,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+MES-APP,server,NTP-SRV,server,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+MES-APP,server,NTP-SRV,server,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+MES-APP,server,NTP-SRV,server,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+MES-APP,server,NTP-SRV,server,SMB,tcp,445,permit,l2,,,同交换机二层直达
+MES-APP,server,NTP-SRV,server,SSH,tcp,22,permit,l2,,,同交换机二层直达
+MES-APP,server,NTP-SRV,server,SNMP,udp,161,permit,l2,,,同交换机二层直达
+MES-APP,server,NTP-SRV,server,NTP,udp,123,permit,l2,,,同交换机二层直达
+MES-APP,server,NTP-SRV,server,ICMP,icmp,,permit,l2,,,同交换机二层直达
+MES-APP,server,NMS-01,mgmt,MES-WEB,tcp,8080,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-01,mgmt,MySQL,tcp,3306,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-01,mgmt,OPC-UA,tcp,4840,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-01,mgmt,HTTP,tcp,80,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-01,mgmt,HTTPS,tcp,443,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-01,mgmt,SMB,tcp,445,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-01,mgmt,SSH,tcp,22,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-01,mgmt,SNMP,udp,161,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-01,mgmt,NTP,udp,123,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-01,mgmt,ICMP,icmp,,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-02,mgmt,MES-WEB,tcp,8080,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-02,mgmt,MySQL,tcp,3306,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-02,mgmt,OPC-UA,tcp,4840,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-02,mgmt,HTTP,tcp,80,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-02,mgmt,HTTPS,tcp,443,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-02,mgmt,SMB,tcp,445,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-02,mgmt,SSH,tcp,22,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-02,mgmt,SNMP,udp,161,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-02,mgmt,NTP,udp,123,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,NMS-02,mgmt,ICMP,icmp,,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-APP,server,VENDOR-CLOUD,internet,MES-WEB,tcp,8080,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,VENDOR-CLOUD,internet,MySQL,tcp,3306,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,VENDOR-CLOUD,internet,OPC-UA,tcp,4840,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,VENDOR-CLOUD,internet,HTTP,tcp,80,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,VENDOR-CLOUD,internet,HTTPS,tcp,443,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,VENDOR-CLOUD,internet,SMB,tcp,445,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,VENDOR-CLOUD,internet,SSH,tcp,22,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,VENDOR-CLOUD,internet,SNMP,udp,161,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,VENDOR-CLOUD,internet,NTP,udp,123,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,VENDOR-CLOUD,internet,ICMP,icmp,,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,PATCH-SRV,internet,MES-WEB,tcp,8080,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,PATCH-SRV,internet,MySQL,tcp,3306,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,PATCH-SRV,internet,OPC-UA,tcp,4840,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,PATCH-SRV,internet,HTTP,tcp,80,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,PATCH-SRV,internet,HTTPS,tcp,443,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,PATCH-SRV,internet,SMB,tcp,445,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,PATCH-SRV,internet,SSH,tcp,22,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,PATCH-SRV,internet,SNMP,udp,161,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,PATCH-SRV,internet,NTP,udp,123,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-APP,server,PATCH-SRV,internet,ICMP,icmp,,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,PLC-01,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-01,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-01,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-01,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-01,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-01,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-01,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-01,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-01,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-01,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-02,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-02,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-02,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-02,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-02,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-02,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-02,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-02,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-02,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PLC-02,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ROBOT-01,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ROBOT-01,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ROBOT-01,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ROBOT-01,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ROBOT-01,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ROBOT-01,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ROBOT-01,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ROBOT-01,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ROBOT-01,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ROBOT-01,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,HMI-01,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,HMI-01,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,HMI-01,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,HMI-01,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,HMI-01,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,HMI-01,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,HMI-01,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,HMI-01,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,HMI-01,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,HMI-01,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ENG-WS,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ENG-WS,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ENG-WS,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ENG-WS,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ENG-WS,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ENG-WS,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ENG-WS,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ENG-WS,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ENG-WS,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,ENG-WS,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+MES-DB,server,PC-FIN-01,office,MES-WEB,tcp,8080,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-FIN-01,office,MySQL,tcp,3306,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-FIN-01,office,OPC-UA,tcp,4840,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-FIN-01,office,HTTP,tcp,80,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-FIN-01,office,HTTPS,tcp,443,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-FIN-01,office,SMB,tcp,445,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-FIN-01,office,SSH,tcp,22,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-FIN-01,office,SNMP,udp,161,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-FIN-01,office,NTP,udp,123,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-FIN-01,office,ICMP,icmp,,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-PLN-01,office,MES-WEB,tcp,8080,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-PLN-01,office,MySQL,tcp,3306,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-PLN-01,office,OPC-UA,tcp,4840,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-PLN-01,office,HTTP,tcp,80,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-PLN-01,office,HTTPS,tcp,443,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-PLN-01,office,SMB,tcp,445,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-PLN-01,office,SSH,tcp,22,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-PLN-01,office,SNMP,udp,161,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-PLN-01,office,NTP,udp,123,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PC-PLN-01,office,ICMP,icmp,,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PRINTER-01,office,MES-WEB,tcp,8080,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PRINTER-01,office,MySQL,tcp,3306,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PRINTER-01,office,OPC-UA,tcp,4840,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PRINTER-01,office,HTTP,tcp,80,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PRINTER-01,office,HTTPS,tcp,443,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PRINTER-01,office,SMB,tcp,445,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PRINTER-01,office,SSH,tcp,22,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PRINTER-01,office,SNMP,udp,161,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PRINTER-01,office,NTP,udp,123,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,PRINTER-01,office,ICMP,icmp,,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+MES-DB,server,MES-APP,server,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+MES-DB,server,MES-APP,server,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+MES-DB,server,MES-APP,server,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+MES-DB,server,MES-APP,server,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+MES-DB,server,MES-APP,server,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+MES-DB,server,MES-APP,server,SMB,tcp,445,permit,l2,,,同交换机二层直达
+MES-DB,server,MES-APP,server,SSH,tcp,22,permit,l2,,,同交换机二层直达
+MES-DB,server,MES-APP,server,SNMP,udp,161,permit,l2,,,同交换机二层直达
+MES-DB,server,MES-APP,server,NTP,udp,123,permit,l2,,,同交换机二层直达
+MES-DB,server,MES-APP,server,ICMP,icmp,,permit,l2,,,同交换机二层直达
+MES-DB,server,OPCUA-GW,server,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+MES-DB,server,OPCUA-GW,server,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+MES-DB,server,OPCUA-GW,server,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+MES-DB,server,OPCUA-GW,server,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+MES-DB,server,OPCUA-GW,server,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+MES-DB,server,OPCUA-GW,server,SMB,tcp,445,permit,l2,,,同交换机二层直达
+MES-DB,server,OPCUA-GW,server,SSH,tcp,22,permit,l2,,,同交换机二层直达
+MES-DB,server,OPCUA-GW,server,SNMP,udp,161,permit,l2,,,同交换机二层直达
+MES-DB,server,OPCUA-GW,server,NTP,udp,123,permit,l2,,,同交换机二层直达
+MES-DB,server,OPCUA-GW,server,ICMP,icmp,,permit,l2,,,同交换机二层直达
+MES-DB,server,NTP-SRV,server,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+MES-DB,server,NTP-SRV,server,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+MES-DB,server,NTP-SRV,server,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+MES-DB,server,NTP-SRV,server,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+MES-DB,server,NTP-SRV,server,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+MES-DB,server,NTP-SRV,server,SMB,tcp,445,permit,l2,,,同交换机二层直达
+MES-DB,server,NTP-SRV,server,SSH,tcp,22,permit,l2,,,同交换机二层直达
+MES-DB,server,NTP-SRV,server,SNMP,udp,161,permit,l2,,,同交换机二层直达
+MES-DB,server,NTP-SRV,server,NTP,udp,123,permit,l2,,,同交换机二层直达
+MES-DB,server,NTP-SRV,server,ICMP,icmp,,permit,l2,,,同交换机二层直达
+MES-DB,server,NMS-01,mgmt,MES-WEB,tcp,8080,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-01,mgmt,MySQL,tcp,3306,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-01,mgmt,OPC-UA,tcp,4840,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-01,mgmt,HTTP,tcp,80,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-01,mgmt,HTTPS,tcp,443,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-01,mgmt,SMB,tcp,445,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-01,mgmt,SSH,tcp,22,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-01,mgmt,SNMP,udp,161,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-01,mgmt,NTP,udp,123,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-01,mgmt,ICMP,icmp,,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-02,mgmt,MES-WEB,tcp,8080,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-02,mgmt,MySQL,tcp,3306,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-02,mgmt,OPC-UA,tcp,4840,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-02,mgmt,HTTP,tcp,80,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-02,mgmt,HTTPS,tcp,443,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-02,mgmt,SMB,tcp,445,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-02,mgmt,SSH,tcp,22,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-02,mgmt,SNMP,udp,161,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-02,mgmt,NTP,udp,123,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,NMS-02,mgmt,ICMP,icmp,,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+MES-DB,server,VENDOR-CLOUD,internet,MES-WEB,tcp,8080,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,VENDOR-CLOUD,internet,MySQL,tcp,3306,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,VENDOR-CLOUD,internet,OPC-UA,tcp,4840,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,VENDOR-CLOUD,internet,HTTP,tcp,80,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,VENDOR-CLOUD,internet,HTTPS,tcp,443,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,VENDOR-CLOUD,internet,SMB,tcp,445,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,VENDOR-CLOUD,internet,SSH,tcp,22,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,VENDOR-CLOUD,internet,SNMP,udp,161,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,VENDOR-CLOUD,internet,NTP,udp,123,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,VENDOR-CLOUD,internet,ICMP,icmp,,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,PATCH-SRV,internet,MES-WEB,tcp,8080,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,PATCH-SRV,internet,MySQL,tcp,3306,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,PATCH-SRV,internet,OPC-UA,tcp,4840,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,PATCH-SRV,internet,HTTP,tcp,80,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,PATCH-SRV,internet,HTTPS,tcp,443,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,PATCH-SRV,internet,SMB,tcp,445,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,PATCH-SRV,internet,SSH,tcp,22,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,PATCH-SRV,internet,SNMP,udp,161,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,PATCH-SRV,internet,NTP,udp,123,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+MES-DB,server,PATCH-SRV,internet,ICMP,icmp,,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,PLC-01,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-01,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-01,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-01,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-01,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-01,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-01,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-01,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-01,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-01,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-02,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-02,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-02,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-02,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-02,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-02,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-02,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-02,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-02,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PLC-02,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ROBOT-01,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ROBOT-01,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ROBOT-01,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ROBOT-01,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ROBOT-01,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ROBOT-01,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ROBOT-01,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ROBOT-01,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ROBOT-01,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ROBOT-01,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,HMI-01,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,HMI-01,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,HMI-01,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,HMI-01,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,HMI-01,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,HMI-01,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,HMI-01,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,HMI-01,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,HMI-01,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,HMI-01,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ENG-WS,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ENG-WS,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ENG-WS,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ENG-WS,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ENG-WS,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ENG-WS,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ENG-WS,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ENG-WS,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ENG-WS,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,ENG-WS,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+OPCUA-GW,server,PC-FIN-01,office,MES-WEB,tcp,8080,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-FIN-01,office,MySQL,tcp,3306,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-FIN-01,office,OPC-UA,tcp,4840,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-FIN-01,office,HTTP,tcp,80,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-FIN-01,office,HTTPS,tcp,443,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-FIN-01,office,SMB,tcp,445,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-FIN-01,office,SSH,tcp,22,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-FIN-01,office,SNMP,udp,161,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-FIN-01,office,NTP,udp,123,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-FIN-01,office,ICMP,icmp,,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-PLN-01,office,MES-WEB,tcp,8080,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-PLN-01,office,MySQL,tcp,3306,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-PLN-01,office,OPC-UA,tcp,4840,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-PLN-01,office,HTTP,tcp,80,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-PLN-01,office,HTTPS,tcp,443,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-PLN-01,office,SMB,tcp,445,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-PLN-01,office,SSH,tcp,22,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-PLN-01,office,SNMP,udp,161,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-PLN-01,office,NTP,udp,123,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PC-PLN-01,office,ICMP,icmp,,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PRINTER-01,office,MES-WEB,tcp,8080,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PRINTER-01,office,MySQL,tcp,3306,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PRINTER-01,office,OPC-UA,tcp,4840,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PRINTER-01,office,HTTP,tcp,80,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PRINTER-01,office,HTTPS,tcp,443,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PRINTER-01,office,SMB,tcp,445,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PRINTER-01,office,SSH,tcp,22,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PRINTER-01,office,SNMP,udp,161,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PRINTER-01,office,NTP,udp,123,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,PRINTER-01,office,ICMP,icmp,,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+OPCUA-GW,server,MES-APP,server,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-APP,server,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-APP,server,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-APP,server,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-APP,server,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-APP,server,SMB,tcp,445,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-APP,server,SSH,tcp,22,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-APP,server,SNMP,udp,161,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-APP,server,NTP,udp,123,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-APP,server,ICMP,icmp,,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-DB,server,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-DB,server,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-DB,server,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-DB,server,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-DB,server,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-DB,server,SMB,tcp,445,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-DB,server,SSH,tcp,22,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-DB,server,SNMP,udp,161,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-DB,server,NTP,udp,123,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,MES-DB,server,ICMP,icmp,,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,NTP-SRV,server,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,NTP-SRV,server,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,NTP-SRV,server,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,NTP-SRV,server,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,NTP-SRV,server,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,NTP-SRV,server,SMB,tcp,445,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,NTP-SRV,server,SSH,tcp,22,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,NTP-SRV,server,SNMP,udp,161,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,NTP-SRV,server,NTP,udp,123,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,NTP-SRV,server,ICMP,icmp,,permit,l2,,,同交换机二层直达
+OPCUA-GW,server,NMS-01,mgmt,MES-WEB,tcp,8080,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-01,mgmt,MySQL,tcp,3306,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-01,mgmt,OPC-UA,tcp,4840,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-01,mgmt,HTTP,tcp,80,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-01,mgmt,HTTPS,tcp,443,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-01,mgmt,SMB,tcp,445,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-01,mgmt,SSH,tcp,22,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-01,mgmt,SNMP,udp,161,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-01,mgmt,NTP,udp,123,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-01,mgmt,ICMP,icmp,,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-02,mgmt,MES-WEB,tcp,8080,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-02,mgmt,MySQL,tcp,3306,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-02,mgmt,OPC-UA,tcp,4840,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-02,mgmt,HTTP,tcp,80,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-02,mgmt,HTTPS,tcp,443,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-02,mgmt,SMB,tcp,445,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-02,mgmt,SSH,tcp,22,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-02,mgmt,SNMP,udp,161,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-02,mgmt,NTP,udp,123,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,NMS-02,mgmt,ICMP,icmp,,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+OPCUA-GW,server,VENDOR-CLOUD,internet,MES-WEB,tcp,8080,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,VENDOR-CLOUD,internet,MySQL,tcp,3306,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,VENDOR-CLOUD,internet,OPC-UA,tcp,4840,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,VENDOR-CLOUD,internet,HTTP,tcp,80,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,VENDOR-CLOUD,internet,HTTPS,tcp,443,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,VENDOR-CLOUD,internet,SMB,tcp,445,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,VENDOR-CLOUD,internet,SSH,tcp,22,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,VENDOR-CLOUD,internet,SNMP,udp,161,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,VENDOR-CLOUD,internet,NTP,udp,123,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,VENDOR-CLOUD,internet,ICMP,icmp,,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,PATCH-SRV,internet,MES-WEB,tcp,8080,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,PATCH-SRV,internet,MySQL,tcp,3306,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,PATCH-SRV,internet,OPC-UA,tcp,4840,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,PATCH-SRV,internet,HTTP,tcp,80,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,PATCH-SRV,internet,HTTPS,tcp,443,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,PATCH-SRV,internet,SMB,tcp,445,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,PATCH-SRV,internet,SSH,tcp,22,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,PATCH-SRV,internet,SNMP,udp,161,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,PATCH-SRV,internet,NTP,udp,123,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+OPCUA-GW,server,PATCH-SRV,internet,ICMP,icmp,,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,PLC-01,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-01,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-01,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-01,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-01,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-01,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-01,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-01,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-01,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-01,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-02,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-02,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-02,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-02,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-02,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-02,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-02,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-02,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-02,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PLC-02,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ROBOT-01,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ROBOT-01,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ROBOT-01,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ROBOT-01,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ROBOT-01,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ROBOT-01,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ROBOT-01,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ROBOT-01,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ROBOT-01,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ROBOT-01,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,HMI-01,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,HMI-01,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,HMI-01,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,HMI-01,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,HMI-01,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,HMI-01,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,HMI-01,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,HMI-01,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,HMI-01,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,HMI-01,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ENG-WS,workshop,MES-WEB,tcp,8080,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ENG-WS,workshop,MySQL,tcp,3306,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ENG-WS,workshop,OPC-UA,tcp,4840,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ENG-WS,workshop,HTTP,tcp,80,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ENG-WS,workshop,HTTPS,tcp,443,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ENG-WS,workshop,SMB,tcp,445,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ENG-WS,workshop,SSH,tcp,22,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ENG-WS,workshop,SNMP,udp,161,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ENG-WS,workshop,NTP,udp,123,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,ENG-WS,workshop,ICMP,icmp,,deny,l3,42,,被策略 42 拒绝：服务器区不得主动访问生产设备（防横向移动）
+NTP-SRV,server,PC-FIN-01,office,MES-WEB,tcp,8080,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-FIN-01,office,MySQL,tcp,3306,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-FIN-01,office,OPC-UA,tcp,4840,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-FIN-01,office,HTTP,tcp,80,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-FIN-01,office,HTTPS,tcp,443,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-FIN-01,office,SMB,tcp,445,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-FIN-01,office,SSH,tcp,22,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-FIN-01,office,SNMP,udp,161,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-FIN-01,office,NTP,udp,123,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-FIN-01,office,ICMP,icmp,,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-PLN-01,office,MES-WEB,tcp,8080,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-PLN-01,office,MySQL,tcp,3306,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-PLN-01,office,OPC-UA,tcp,4840,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-PLN-01,office,HTTP,tcp,80,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-PLN-01,office,HTTPS,tcp,443,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-PLN-01,office,SMB,tcp,445,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-PLN-01,office,SSH,tcp,22,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-PLN-01,office,SNMP,udp,161,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-PLN-01,office,NTP,udp,123,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PC-PLN-01,office,ICMP,icmp,,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PRINTER-01,office,MES-WEB,tcp,8080,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PRINTER-01,office,MySQL,tcp,3306,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PRINTER-01,office,OPC-UA,tcp,4840,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PRINTER-01,office,HTTP,tcp,80,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PRINTER-01,office,HTTPS,tcp,443,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PRINTER-01,office,SMB,tcp,445,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PRINTER-01,office,SSH,tcp,22,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PRINTER-01,office,SNMP,udp,161,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PRINTER-01,office,NTP,udp,123,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,PRINTER-01,office,ICMP,icmp,,deny,l3,47,,被策略 47 拒绝：服务器区不得访问办公区（防数据外泄）
+NTP-SRV,server,MES-APP,server,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-APP,server,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-APP,server,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-APP,server,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-APP,server,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-APP,server,SMB,tcp,445,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-APP,server,SSH,tcp,22,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-APP,server,SNMP,udp,161,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-APP,server,NTP,udp,123,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-APP,server,ICMP,icmp,,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-DB,server,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-DB,server,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-DB,server,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-DB,server,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-DB,server,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-DB,server,SMB,tcp,445,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-DB,server,SSH,tcp,22,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-DB,server,SNMP,udp,161,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-DB,server,NTP,udp,123,permit,l2,,,同交换机二层直达
+NTP-SRV,server,MES-DB,server,ICMP,icmp,,permit,l2,,,同交换机二层直达
+NTP-SRV,server,OPCUA-GW,server,MES-WEB,tcp,8080,permit,l2,,,同交换机二层直达
+NTP-SRV,server,OPCUA-GW,server,MySQL,tcp,3306,permit,l2,,,同交换机二层直达
+NTP-SRV,server,OPCUA-GW,server,OPC-UA,tcp,4840,permit,l2,,,同交换机二层直达
+NTP-SRV,server,OPCUA-GW,server,HTTP,tcp,80,permit,l2,,,同交换机二层直达
+NTP-SRV,server,OPCUA-GW,server,HTTPS,tcp,443,permit,l2,,,同交换机二层直达
+NTP-SRV,server,OPCUA-GW,server,SMB,tcp,445,permit,l2,,,同交换机二层直达
+NTP-SRV,server,OPCUA-GW,server,SSH,tcp,22,permit,l2,,,同交换机二层直达
+NTP-SRV,server,OPCUA-GW,server,SNMP,udp,161,permit,l2,,,同交换机二层直达
+NTP-SRV,server,OPCUA-GW,server,NTP,udp,123,permit,l2,,,同交换机二层直达
+NTP-SRV,server,OPCUA-GW,server,ICMP,icmp,,permit,l2,,,同交换机二层直达
+NTP-SRV,server,NMS-01,mgmt,MES-WEB,tcp,8080,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-01,mgmt,MySQL,tcp,3306,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-01,mgmt,OPC-UA,tcp,4840,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-01,mgmt,HTTP,tcp,80,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-01,mgmt,HTTPS,tcp,443,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-01,mgmt,SMB,tcp,445,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-01,mgmt,SSH,tcp,22,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-01,mgmt,SNMP,udp,161,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-01,mgmt,NTP,udp,123,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-01,mgmt,ICMP,icmp,,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-02,mgmt,MES-WEB,tcp,8080,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-02,mgmt,MySQL,tcp,3306,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-02,mgmt,OPC-UA,tcp,4840,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-02,mgmt,HTTP,tcp,80,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-02,mgmt,HTTPS,tcp,443,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-02,mgmt,SMB,tcp,445,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-02,mgmt,SSH,tcp,22,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-02,mgmt,SNMP,udp,161,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-02,mgmt,NTP,udp,123,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,NMS-02,mgmt,ICMP,icmp,,deny,l3,46,,被策略 46 拒绝：除网管区外不得访问设备管理网
+NTP-SRV,server,VENDOR-CLOUD,internet,MES-WEB,tcp,8080,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,VENDOR-CLOUD,internet,MySQL,tcp,3306,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,VENDOR-CLOUD,internet,OPC-UA,tcp,4840,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,VENDOR-CLOUD,internet,HTTP,tcp,80,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,VENDOR-CLOUD,internet,HTTPS,tcp,443,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,VENDOR-CLOUD,internet,SMB,tcp,445,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,VENDOR-CLOUD,internet,SSH,tcp,22,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,VENDOR-CLOUD,internet,SNMP,udp,161,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,VENDOR-CLOUD,internet,NTP,udp,123,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,VENDOR-CLOUD,internet,ICMP,icmp,,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,PATCH-SRV,internet,MES-WEB,tcp,8080,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,PATCH-SRV,internet,MySQL,tcp,3306,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,PATCH-SRV,internet,OPC-UA,tcp,4840,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,PATCH-SRV,internet,HTTP,tcp,80,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,PATCH-SRV,internet,HTTPS,tcp,443,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,PATCH-SRV,internet,SMB,tcp,445,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,PATCH-SRV,internet,SSH,tcp,22,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,PATCH-SRV,internet,SNMP,udp,161,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,PATCH-SRV,internet,NTP,udp,123,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NTP-SRV,server,PATCH-SRV,internet,ICMP,icmp,,permit,l3,51,是,策略 51 放通，且经 NAT 出网
+NMS-01,mgmt,PLC-01,workshop,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PLC-01,workshop,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PLC-01,workshop,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PLC-01,workshop,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PLC-01,workshop,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PLC-01,workshop,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PLC-01,workshop,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-01,mgmt,PLC-01,workshop,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-01,mgmt,PLC-01,workshop,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PLC-01,workshop,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-01,mgmt,PLC-02,workshop,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PLC-02,workshop,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PLC-02,workshop,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PLC-02,workshop,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PLC-02,workshop,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PLC-02,workshop,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PLC-02,workshop,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-01,mgmt,PLC-02,workshop,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-01,mgmt,PLC-02,workshop,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PLC-02,workshop,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-01,mgmt,ROBOT-01,workshop,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,ROBOT-01,workshop,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,ROBOT-01,workshop,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,ROBOT-01,workshop,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,ROBOT-01,workshop,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,ROBOT-01,workshop,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,ROBOT-01,workshop,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-01,mgmt,ROBOT-01,workshop,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-01,mgmt,ROBOT-01,workshop,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,ROBOT-01,workshop,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-01,mgmt,HMI-01,workshop,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,HMI-01,workshop,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,HMI-01,workshop,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,HMI-01,workshop,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,HMI-01,workshop,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,HMI-01,workshop,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,HMI-01,workshop,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-01,mgmt,HMI-01,workshop,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-01,mgmt,HMI-01,workshop,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,HMI-01,workshop,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-01,mgmt,ENG-WS,workshop,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,ENG-WS,workshop,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,ENG-WS,workshop,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,ENG-WS,workshop,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,ENG-WS,workshop,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,ENG-WS,workshop,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,ENG-WS,workshop,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-01,mgmt,ENG-WS,workshop,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-01,mgmt,ENG-WS,workshop,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,ENG-WS,workshop,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-01,mgmt,PC-FIN-01,office,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PC-FIN-01,office,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PC-FIN-01,office,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PC-FIN-01,office,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PC-FIN-01,office,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PC-FIN-01,office,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PC-FIN-01,office,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-01,mgmt,PC-FIN-01,office,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-01,mgmt,PC-FIN-01,office,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PC-FIN-01,office,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-01,mgmt,PC-PLN-01,office,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PC-PLN-01,office,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PC-PLN-01,office,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PC-PLN-01,office,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PC-PLN-01,office,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PC-PLN-01,office,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PC-PLN-01,office,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-01,mgmt,PC-PLN-01,office,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-01,mgmt,PC-PLN-01,office,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PC-PLN-01,office,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-01,mgmt,PRINTER-01,office,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PRINTER-01,office,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PRINTER-01,office,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PRINTER-01,office,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PRINTER-01,office,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PRINTER-01,office,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PRINTER-01,office,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-01,mgmt,PRINTER-01,office,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-01,mgmt,PRINTER-01,office,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PRINTER-01,office,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-01,mgmt,MES-APP,server,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,MES-APP,server,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,MES-APP,server,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,MES-APP,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,MES-APP,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,MES-APP,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,MES-APP,server,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-01,mgmt,MES-APP,server,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-01,mgmt,MES-APP,server,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,MES-APP,server,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-01,mgmt,MES-DB,server,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,MES-DB,server,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,MES-DB,server,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,MES-DB,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,MES-DB,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,MES-DB,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,MES-DB,server,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-01,mgmt,MES-DB,server,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-01,mgmt,MES-DB,server,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,MES-DB,server,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-01,mgmt,OPCUA-GW,server,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,OPCUA-GW,server,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,OPCUA-GW,server,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,OPCUA-GW,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,OPCUA-GW,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,OPCUA-GW,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,OPCUA-GW,server,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-01,mgmt,OPCUA-GW,server,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-01,mgmt,OPCUA-GW,server,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,OPCUA-GW,server,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-01,mgmt,NTP-SRV,server,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,NTP-SRV,server,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,NTP-SRV,server,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,NTP-SRV,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,NTP-SRV,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,NTP-SRV,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,NTP-SRV,server,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-01,mgmt,NTP-SRV,server,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-01,mgmt,NTP-SRV,server,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,NTP-SRV,server,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-01,mgmt,NMS-02,mgmt,MES-WEB,tcp,8080,permit,l2,,,VLAN 40 内二层可达
+NMS-01,mgmt,NMS-02,mgmt,MySQL,tcp,3306,permit,l2,,,VLAN 40 内二层可达
+NMS-01,mgmt,NMS-02,mgmt,OPC-UA,tcp,4840,permit,l2,,,VLAN 40 内二层可达
+NMS-01,mgmt,NMS-02,mgmt,HTTP,tcp,80,permit,l2,,,VLAN 40 内二层可达
+NMS-01,mgmt,NMS-02,mgmt,HTTPS,tcp,443,permit,l2,,,VLAN 40 内二层可达
+NMS-01,mgmt,NMS-02,mgmt,SMB,tcp,445,permit,l2,,,VLAN 40 内二层可达
+NMS-01,mgmt,NMS-02,mgmt,SSH,tcp,22,permit,l2,,,VLAN 40 内二层可达
+NMS-01,mgmt,NMS-02,mgmt,SNMP,udp,161,permit,l2,,,VLAN 40 内二层可达
+NMS-01,mgmt,NMS-02,mgmt,NTP,udp,123,permit,l2,,,VLAN 40 内二层可达
+NMS-01,mgmt,NMS-02,mgmt,ICMP,icmp,,permit,l2,,,VLAN 40 内二层可达
+NMS-01,mgmt,VENDOR-CLOUD,internet,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,VENDOR-CLOUD,internet,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,VENDOR-CLOUD,internet,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,VENDOR-CLOUD,internet,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,VENDOR-CLOUD,internet,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,VENDOR-CLOUD,internet,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,VENDOR-CLOUD,internet,SSH,tcp,22,deny,l3,30,,设备管理区 未纳入 NAT 出口策略（允许区域：office、server）
+NMS-01,mgmt,VENDOR-CLOUD,internet,SNMP,udp,161,deny,l3,32,,设备管理区 未纳入 NAT 出口策略（允许区域：office、server）
+NMS-01,mgmt,VENDOR-CLOUD,internet,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,VENDOR-CLOUD,internet,ICMP,icmp,,deny,l3,31,,设备管理区 未纳入 NAT 出口策略（允许区域：office、server）
+NMS-01,mgmt,PATCH-SRV,internet,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PATCH-SRV,internet,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PATCH-SRV,internet,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PATCH-SRV,internet,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PATCH-SRV,internet,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PATCH-SRV,internet,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PATCH-SRV,internet,SSH,tcp,22,deny,l3,30,,设备管理区 未纳入 NAT 出口策略（允许区域：office、server）
+NMS-01,mgmt,PATCH-SRV,internet,SNMP,udp,161,deny,l3,32,,设备管理区 未纳入 NAT 出口策略（允许区域：office、server）
+NMS-01,mgmt,PATCH-SRV,internet,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-01,mgmt,PATCH-SRV,internet,ICMP,icmp,,deny,l3,31,,设备管理区 未纳入 NAT 出口策略（允许区域：office、server）
+NMS-02,mgmt,PLC-01,workshop,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PLC-01,workshop,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PLC-01,workshop,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PLC-01,workshop,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PLC-01,workshop,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PLC-01,workshop,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PLC-01,workshop,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-02,mgmt,PLC-01,workshop,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-02,mgmt,PLC-01,workshop,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PLC-01,workshop,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-02,mgmt,PLC-02,workshop,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PLC-02,workshop,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PLC-02,workshop,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PLC-02,workshop,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PLC-02,workshop,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PLC-02,workshop,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PLC-02,workshop,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-02,mgmt,PLC-02,workshop,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-02,mgmt,PLC-02,workshop,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PLC-02,workshop,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-02,mgmt,ROBOT-01,workshop,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,ROBOT-01,workshop,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,ROBOT-01,workshop,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,ROBOT-01,workshop,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,ROBOT-01,workshop,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,ROBOT-01,workshop,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,ROBOT-01,workshop,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-02,mgmt,ROBOT-01,workshop,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-02,mgmt,ROBOT-01,workshop,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,ROBOT-01,workshop,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-02,mgmt,HMI-01,workshop,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,HMI-01,workshop,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,HMI-01,workshop,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,HMI-01,workshop,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,HMI-01,workshop,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,HMI-01,workshop,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,HMI-01,workshop,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-02,mgmt,HMI-01,workshop,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-02,mgmt,HMI-01,workshop,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,HMI-01,workshop,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-02,mgmt,ENG-WS,workshop,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,ENG-WS,workshop,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,ENG-WS,workshop,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,ENG-WS,workshop,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,ENG-WS,workshop,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,ENG-WS,workshop,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,ENG-WS,workshop,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-02,mgmt,ENG-WS,workshop,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-02,mgmt,ENG-WS,workshop,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,ENG-WS,workshop,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-02,mgmt,PC-FIN-01,office,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PC-FIN-01,office,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PC-FIN-01,office,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PC-FIN-01,office,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PC-FIN-01,office,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PC-FIN-01,office,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PC-FIN-01,office,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-02,mgmt,PC-FIN-01,office,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-02,mgmt,PC-FIN-01,office,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PC-FIN-01,office,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-02,mgmt,PC-PLN-01,office,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PC-PLN-01,office,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PC-PLN-01,office,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PC-PLN-01,office,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PC-PLN-01,office,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PC-PLN-01,office,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PC-PLN-01,office,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-02,mgmt,PC-PLN-01,office,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-02,mgmt,PC-PLN-01,office,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PC-PLN-01,office,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-02,mgmt,PRINTER-01,office,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PRINTER-01,office,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PRINTER-01,office,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PRINTER-01,office,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PRINTER-01,office,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PRINTER-01,office,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PRINTER-01,office,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-02,mgmt,PRINTER-01,office,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-02,mgmt,PRINTER-01,office,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PRINTER-01,office,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-02,mgmt,MES-APP,server,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,MES-APP,server,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,MES-APP,server,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,MES-APP,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,MES-APP,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,MES-APP,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,MES-APP,server,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-02,mgmt,MES-APP,server,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-02,mgmt,MES-APP,server,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,MES-APP,server,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-02,mgmt,MES-DB,server,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,MES-DB,server,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,MES-DB,server,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,MES-DB,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,MES-DB,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,MES-DB,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,MES-DB,server,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-02,mgmt,MES-DB,server,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-02,mgmt,MES-DB,server,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,MES-DB,server,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-02,mgmt,OPCUA-GW,server,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,OPCUA-GW,server,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,OPCUA-GW,server,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,OPCUA-GW,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,OPCUA-GW,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,OPCUA-GW,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,OPCUA-GW,server,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-02,mgmt,OPCUA-GW,server,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-02,mgmt,OPCUA-GW,server,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,OPCUA-GW,server,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-02,mgmt,NTP-SRV,server,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,NTP-SRV,server,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,NTP-SRV,server,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,NTP-SRV,server,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,NTP-SRV,server,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,NTP-SRV,server,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,NTP-SRV,server,SSH,tcp,22,permit,l3,30,,策略 30 放通
+NMS-02,mgmt,NTP-SRV,server,SNMP,udp,161,permit,l3,32,,策略 32 放通
+NMS-02,mgmt,NTP-SRV,server,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,NTP-SRV,server,ICMP,icmp,,permit,l3,31,,策略 31 放通
+NMS-02,mgmt,NMS-01,mgmt,MES-WEB,tcp,8080,permit,l2,,,VLAN 40 内二层可达
+NMS-02,mgmt,NMS-01,mgmt,MySQL,tcp,3306,permit,l2,,,VLAN 40 内二层可达
+NMS-02,mgmt,NMS-01,mgmt,OPC-UA,tcp,4840,permit,l2,,,VLAN 40 内二层可达
+NMS-02,mgmt,NMS-01,mgmt,HTTP,tcp,80,permit,l2,,,VLAN 40 内二层可达
+NMS-02,mgmt,NMS-01,mgmt,HTTPS,tcp,443,permit,l2,,,VLAN 40 内二层可达
+NMS-02,mgmt,NMS-01,mgmt,SMB,tcp,445,permit,l2,,,VLAN 40 内二层可达
+NMS-02,mgmt,NMS-01,mgmt,SSH,tcp,22,permit,l2,,,VLAN 40 内二层可达
+NMS-02,mgmt,NMS-01,mgmt,SNMP,udp,161,permit,l2,,,VLAN 40 内二层可达
+NMS-02,mgmt,NMS-01,mgmt,NTP,udp,123,permit,l2,,,VLAN 40 内二层可达
+NMS-02,mgmt,NMS-01,mgmt,ICMP,icmp,,permit,l2,,,VLAN 40 内二层可达
+NMS-02,mgmt,VENDOR-CLOUD,internet,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,VENDOR-CLOUD,internet,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,VENDOR-CLOUD,internet,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,VENDOR-CLOUD,internet,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,VENDOR-CLOUD,internet,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,VENDOR-CLOUD,internet,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,VENDOR-CLOUD,internet,SSH,tcp,22,deny,l3,30,,设备管理区 未纳入 NAT 出口策略（允许区域：office、server）
+NMS-02,mgmt,VENDOR-CLOUD,internet,SNMP,udp,161,deny,l3,32,,设备管理区 未纳入 NAT 出口策略（允许区域：office、server）
+NMS-02,mgmt,VENDOR-CLOUD,internet,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,VENDOR-CLOUD,internet,ICMP,icmp,,deny,l3,31,,设备管理区 未纳入 NAT 出口策略（允许区域：office、server）
+NMS-02,mgmt,PATCH-SRV,internet,MES-WEB,tcp,8080,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PATCH-SRV,internet,MySQL,tcp,3306,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PATCH-SRV,internet,OPC-UA,tcp,4840,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PATCH-SRV,internet,HTTP,tcp,80,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PATCH-SRV,internet,HTTPS,tcp,443,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PATCH-SRV,internet,SMB,tcp,445,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PATCH-SRV,internet,SSH,tcp,22,deny,l3,30,,设备管理区 未纳入 NAT 出口策略（允许区域：office、server）
+NMS-02,mgmt,PATCH-SRV,internet,SNMP,udp,161,deny,l3,32,,设备管理区 未纳入 NAT 出口策略（允许区域：office、server）
+NMS-02,mgmt,PATCH-SRV,internet,NTP,udp,123,deny,l3,90,,被策略 90 拒绝：默认拒绝并记录日志
+NMS-02,mgmt,PATCH-SRV,internet,ICMP,icmp,,deny,l3,31,,设备管理区 未纳入 NAT 出口策略（允许区域：office、server）

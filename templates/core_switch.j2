@@ -1,0 +1,93 @@
+# =============================================================================
+# {{ device.name }} — {{ device.description }}
+# 型号：{{ device.model }}    管理地址：{{ device.management_ip }}
+# 拓扑：{{ meta.name }}（{{ meta.site }}）  {{ meta.version }}
+# 生成时间：{{ generated_at }}
+#
+# 本文件由 net_auto 自动生成（templates/core_switch.j2），请勿手工修改设备。
+# 变更流程：改 topology/smart_factory.yaml -> 重新生成 -> 可达性矩阵校验 -> 下发。
+# 手工改动会让设备配置与设计文档失去一致性，这是工厂网最难治的问题。
+# =============================================================================
+#
+sysname {{ device.name }}
+#
+vlan batch {{ device.vlans | join(' ') }}
+#
+# ---- 三层网关（含 VRRP 冗余与域间 ACL）----
+#
+{% for svi in svis %}
+interface Vlanif{{ svi.vlan }}
+ description {{ svi.description }}
+ ip address {{ svi.addr }} {{ svi.mask }}
+{% for v in svi.vrrp %}
+ vrrp vrid {{ v.vrid }} virtual-ip {{ v.virtual_ip }}
+ vrrp vrid {{ v.vrid }} priority {{ v.priority }}
+ vrrp vrid {{ v.vrid }} preempt-mode timer delay {{ v.preempt_delay }}
+{% endfor %}
+{% if svi.acl %}
+ traffic-filter inbound acl {{ svi.acl }}
+{% endif %}
+#
+{% endfor %}
+# ---- 物理接口 ----
+#
+{% for iface in interfaces %}
+interface {{ iface.name }}
+ description {{ iface.desc_full }}
+{% if iface.type == 'trunk' %}
+ port link-type trunk
+ port trunk allow-pass vlan {{ iface.allow_vlans | join(' ') }}
+{% elif iface.type == 'access' %}
+ port link-type access
+ port default vlan {{ iface.vlan }}
+{% else %}
+ undo portswitch
+ ip address {{ iface.addr }} {{ iface.mask }}
+{% endif %}
+#
+{% endfor %}
+# ---- 域间访问控制 ACL ----
+#
+{% for acl in acls %}
+acl number {{ acl.acl_number }}
+ description zone-{{ acl.zone_key }}
+{% for rule in acl.rules %}
+{{ rule.render() }}
+{% endfor %}
+#
+{% endfor %}
+# ---- 路由 ----
+#
+{% for route in routes %}
+ip route-static {{ route.network }} {{ route.mask }} {{ route.next_hop }} preference {{ route.preference }}
+{% endfor %}
+#
+# ---- 基础运维 ----
+#
+{% if ops.ntp_required %}
+ntp-service unicast-server {{ ops.ntp_server }}
+#
+{% endif %}
+{% if ops.logging_required and ops.loghost %}
+info-center enable
+info-center loghost {{ ops.loghost }}
+info-center source default channel 2 log level warning
+#
+{% endif %}
+stelnet server enable
+#
+aaa
+ local-user netadmin password irreversible-cipher Netadmin@2026
+ local-user netadmin privilege level 15
+ local-user netadmin service-type ssh
+ local-user netadmin service-type snmp
+#
+user-interface vty 0 4
+ authentication-mode aaa
+ protocol inbound ssh
+#
+snmp-agent
+ snmp-agent sys-info version v2c
+ snmp-agent community read cipher SnmpRead@2026
+#
+return

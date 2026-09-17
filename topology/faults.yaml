@@ -1,0 +1,72 @@
+# =============================================================================
+# 故障注入清单
+#
+# 每条故障对应一条用例（TC-FLT-xxx）。expect_detected=true 表示
+# 「注入后检查套件必须报错」；注入后依然全绿，说明检查有盲区。
+#
+# 注入分两类，检出路径不同，两类都要有：
+#   * 行为类（漏放行 VLAN / 误删 ACL / 关 NAT）-> 可达性矩阵与期望检查检出
+#   * 数据类（接入口 VLAN 划错 / VLAN 未定义）-> 拓扑结构自检检出
+# =============================================================================
+
+version: "1.0"
+
+faults:
+  - id: FLT-001
+    name: 接入交换机上行 Trunk 漏放行服务器 VLAN
+    mutation: remove_vlan_from_all_trunks
+    params: {device: ACC-SERVER, vlan: 30}
+    expect_detected: true
+    expect_symptom: 服务器区整区不可达，涉及 MES / 数据库 / OPC UA 的业务流全部失效
+    requirement: REQ-FLT-011
+    note: >
+      这是现场最常见的误操作：改 Trunk 时漏写一个 VLAN。
+      双上联设计下必须两条上行都不放行才会真正断，所以这里对两个上行口一起摘。
+
+  - id: FLT-002
+    name: 误删车间到 MES 的放通策略
+    mutation: delete_policy
+    params: {id: 10}
+    expect_detected: true
+    expect_symptom: 车间 PLC 无法访问 MES 应用与数据库，产线数据中断
+    requirement: REQ-FLT-012
+
+  - id: FLT-003
+    name: 临时放通写成 any 到 any（catch-all permit）
+    mutation: insert_catchall_permit
+    params: {id: 5}
+    expect_detected: true
+    expect_symptom: 隔离要求成片失效（生产网与办公网、生产网与互联网等多个不变式被破坏）
+    requirement: REQ-FLT-013
+    note: >
+      最危险的一类误操作。管理员为临时放开一条业务图省事写 any any permit，
+      结果一次性破坏全部隔离。单看某一条业务流「通了」是发现不了的，
+      只有全矩阵扫描才能暴露。
+
+  - id: FLT-004
+    name: 核心交换机丢失服务器区网关 SVI
+    mutation: remove_svi
+    params: {device: Core-SW-1, vlan: 30}
+    expect_detected: true
+    expect_symptom: VRRP 主设备缺失网关，服务器区跨域访问全部不可用
+    requirement: REQ-FLT-014
+
+  - id: FLT-005
+    name: 出口路由器 NAT 未启用
+    mutation: disable_nat
+    params: {}
+    expect_detected: true
+    expect_symptom: 办公区与服务器区无法访问互联网，补丁与更新流程中断
+    requirement: REQ-FLT-015
+
+  - id: FLT-006
+    name: 办公接入口 VLAN 划错
+    mutation: misassign_access_port
+    params: {device: ACC-OFFICE, port: GE0/0/1, vlan: 30}
+    expect_detected: true
+    expect_symptom: 数据类错误——该主机被划进服务器区广播域，结构自检立即报错
+    requirement: REQ-FLT-016
+    note: >
+      这类错误短期内可能看不出影响（引擎按「域 -> VLAN」映射推导可达性，
+      不依赖端口实际 VLAN），但现场会导致主机拿错网段、互相串访。
+      只做行为检查会漏掉它，所以必须同时做结构自检。

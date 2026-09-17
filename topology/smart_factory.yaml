@@ -1,0 +1,307 @@
+# =============================================================================
+# 智能工厂网络拓扑（单一数据源 / Single Source of Truth）
+#
+# 这份 YAML 同时驱动三件事：
+#   1. 生成华为 VRP 配置（templates/*.j2 + src/net_auto/generator.py）
+#   2. 推导可达性矩阵（src/net_auto/reachability.py）
+#   3. 校验生成配置与设计意图是否一致（src/net_auto/validator.py）
+#
+# 改拓扑只改这一个文件，配置、矩阵、报告三处同步更新——
+# 这就是「配置即代码（Configuration as Code）」，
+# 它解决的是手工配完设备、文档与实物不一致这个工厂网的老问题。
+# =============================================================================
+
+meta:
+  name: 智能工厂网络
+  site: 长春工厂 · 汽车零部件车间
+  code: SFP-2026
+  version: v1.0.0
+  description: 车间生产区 / 办公区 / 服务器区 / 设备管理区 四区隔离与受控互通
+
+# -----------------------------------------------------------------------------
+# 安全域：VLAN 与网段是域的落地载体
+# -----------------------------------------------------------------------------
+zones:
+  - key: workshop
+    name: 车间生产区
+    vlan: 10
+    prefix: 10.10.10.0/24
+    gateway: 10.10.10.254
+    description: PLC / 机器人 / HMI / 工程师站。生产网，最高安全等级
+  - key: office
+    name: 办公区
+    vlan: 20
+    prefix: 10.10.20.0/24
+    gateway: 10.10.20.254
+    description: 办公终端与打印机。可上网，不得接触生产设备
+  - key: server
+    name: 服务器区
+    vlan: 30
+    prefix: 10.10.30.0/24
+    gateway: 10.10.30.254
+    description: MES 应用 / 数据库 / OPC UA 网关 / NTP
+  - key: mgmt
+    name: 设备管理区
+    vlan: 40
+    prefix: 10.10.40.0/24
+    gateway: 10.10.40.254
+    description: 网络设备管理与网管服务器。仅网管区可进入
+  - key: internet
+    name: 互联网
+    vlan: null
+    prefix: 0.0.0.0/0
+    gateway: null
+    description: 外部网络（供应商远程运维云 / 补丁源）
+
+# -----------------------------------------------------------------------------
+# VLAN 定义
+# -----------------------------------------------------------------------------
+vlans:
+  - {id: 10, name: WORKSHOP, description: 车间生产设备}
+  - {id: 20, name: OFFICE, description: 办公终端}
+  - {id: 30, name: SERVER, description: 服务器区}
+  - {id: 40, name: MGMT, description: 网络设备管理}
+  - {id: 99, name: TRANSIT, description: 核心交换机互联}
+
+# -----------------------------------------------------------------------------
+# 服务（协议 + 端口）：可达性矩阵按服务维度逐项验证
+# -----------------------------------------------------------------------------
+services:
+  - {name: MES-WEB,   protocol: tcp,  port: 8080, description: MES 应用服务}
+  - {name: MySQL,     protocol: tcp,  port: 3306, description: MES 数据库}
+  - {name: OPC-UA,    protocol: tcp,  port: 4840, description: OPC UA 网关（工业通信标准）}
+  - {name: HTTP,      protocol: tcp,  port: 80,   description: Web}
+  - {name: HTTPS,     protocol: tcp,  port: 443,  description: Web 加密}
+  - {name: SMB,       protocol: tcp,  port: 445,  description: 文件共享（横向移动高危端口）}
+  - {name: SSH,       protocol: tcp,  port: 22,   description: 设备管理}
+  - {name: SNMP,      protocol: udp,  port: 161,  description: 网管采集}
+  - {name: NTP,       protocol: udp,  port: 123,  description: 时间同步}
+  - {name: ICMP,      protocol: icmp, port: null, description: 连通性探测}
+
+# -----------------------------------------------------------------------------
+# 端系统（主机 / PLC / 服务器）
+# -----------------------------------------------------------------------------
+hosts:
+  # 车间生产区
+  - {name: PLC-01,    zone: workshop, ip: 10.10.10.11, attached_to: ACC-WORKSHOP, port: GE0/0/1,  role: 焊装线 PLC}
+  - {name: PLC-02,    zone: workshop, ip: 10.10.10.12, attached_to: ACC-WORKSHOP, port: GE0/0/2,  role: 总装线 PLC}
+  - {name: ROBOT-01,  zone: workshop, ip: 10.10.10.21, attached_to: ACC-WORKSHOP, port: GE0/0/3,  role: 焊接机器人控制器}
+  - {name: HMI-01,    zone: workshop, ip: 10.10.10.31, attached_to: ACC-WORKSHOP, port: GE0/0/4,  role: 产线 HMI}
+  - {name: ENG-WS,    zone: workshop, ip: 10.10.10.41, attached_to: ACC-WORKSHOP, port: GE0/0/5,  role: 工程师站}
+  # 办公区
+  - {name: PC-FIN-01, zone: office,   ip: 10.10.20.11, attached_to: ACC-OFFICE,   port: GE0/0/1,  role: 财务终端}
+  - {name: PC-PLN-01, zone: office,   ip: 10.10.20.12, attached_to: ACC-OFFICE,   port: GE0/0/2,  role: 计划员终端}
+  - {name: PRINTER-01, zone: office,  ip: 10.10.20.21, attached_to: ACC-OFFICE,   port: GE0/0/3,  role: 网络打印机}
+  # 服务器区
+  - {name: MES-APP,   zone: server,   ip: 10.10.30.11, attached_to: ACC-SERVER,   port: GE0/0/1,  role: MES 应用服务器}
+  - {name: MES-DB,    zone: server,   ip: 10.10.30.12, attached_to: ACC-SERVER,   port: GE0/0/2,  role: MES 数据库}
+  - {name: OPCUA-GW,  zone: server,   ip: 10.10.30.21, attached_to: ACC-SERVER,   port: GE0/0/3,  role: OPC UA 网关}
+  - {name: NTP-SRV,   zone: server,   ip: 10.10.30.31, attached_to: ACC-SERVER,   port: GE0/0/4,  role: 时间服务器}
+  # 设备管理区（双网管，接在不同接入交换机上——用于验证同 VLAN 跨交换机二层路径）
+  - {name: NMS-01,    zone: mgmt,     ip: 10.10.40.100, attached_to: ACC-SERVER,  port: GE0/0/11, role: 主网管服务器}
+  - {name: NMS-02,    zone: mgmt,     ip: 10.10.40.101, attached_to: ACC-OFFICE,  port: GE0/0/10, role: 备网管服务器}
+  # 互联网（仅作为可达性目标，不参与内网交换）
+  - {name: VENDOR-CLOUD, zone: internet, ip: 203.0.113.10, attached_to: null, port: null, role: 供应商远程运维云}
+  - {name: PATCH-SRV,    zone: internet, ip: 198.51.100.20, attached_to: null, port: null, role: 操作系统补丁源}
+
+# -----------------------------------------------------------------------------
+# VRRP 网关冗余：每个业务 VLAN 一对主备核心
+# -----------------------------------------------------------------------------
+vrrp_groups:
+  - {vlan: 10, virtual_ip: 10.10.10.254, vrid: 10, master: Core-SW-1, backup: Core-SW-2, master_priority: 120, backup_priority: 100}
+  - {vlan: 20, virtual_ip: 10.10.20.254, vrid: 20, master: Core-SW-1, backup: Core-SW-2, master_priority: 120, backup_priority: 100}
+  - {vlan: 30, virtual_ip: 10.10.30.254, vrid: 30, master: Core-SW-1, backup: Core-SW-2, master_priority: 120, backup_priority: 100}
+  - {vlan: 40, virtual_ip: 10.10.40.254, vrid: 40, master: Core-SW-1, backup: Core-SW-2, master_priority: 120, backup_priority: 100}
+
+# -----------------------------------------------------------------------------
+# 网络设备
+# -----------------------------------------------------------------------------
+devices:
+  - name: Core-SW-1
+    role: core
+    model: S5731-S24T4X
+    description: 核心交换机（VRRP 主）
+    management_ip: 10.10.40.251
+    vlans: [10, 20, 30, 40, 99]
+    management: {ssh: true, telnet: false, snmp: true}
+    svis:
+      - {vlan: 10, ip: 10.10.10.252/24}
+      - {vlan: 20, ip: 10.10.20.252/24}
+      - {vlan: 30, ip: 10.10.30.252/24}
+      - {vlan: 40, ip: 10.10.40.252/24}
+    vrrp:
+      - {vrid: 10, vlan: 10, virtual_ip: 10.10.10.254, priority: 120, preempt_delay: 20}
+      - {vrid: 20, vlan: 20, virtual_ip: 10.10.20.254, priority: 120, preempt_delay: 20}
+      - {vrid: 30, vlan: 30, virtual_ip: 10.10.30.254, priority: 120, preempt_delay: 20}
+      - {vrid: 40, vlan: 40, virtual_ip: 10.10.40.254, priority: 120, preempt_delay: 20}
+    interfaces:
+      - {name: GE0/0/1,  type: trunk,  allow_vlans: [10, 40], peer: "ACC-WORKSHOP:GE0/0/24"}
+      - {name: GE0/0/2,  type: trunk,  allow_vlans: [20, 40], peer: "ACC-OFFICE:GE0/0/24"}
+      - {name: GE0/0/3,  type: trunk,  allow_vlans: [30, 40], peer: "ACC-SERVER:GE0/0/24"}
+      - {name: GE0/0/20, type: routed, ip: 10.10.99.1/30, peer: "Core-SW-2:GE0/0/20", description: 核心互联（心跳兼数据）}
+      - {name: GE0/0/21, type: routed, ip: 10.10.88.1/30, peer: "RT-EGRESS:GE0/0/1", description: 上联出口}
+    static_routes:
+      - {dest: 0.0.0.0/0, next_hop: 10.10.88.2, metric: 60, description: 缺省路由指向出口路由器}
+
+  - name: Core-SW-2
+    role: core
+    model: S5731-S24T4X
+    description: 核心交换机（VRRP 备）
+    management_ip: 10.10.40.250
+    vlans: [10, 20, 30, 40, 99]
+    management: {ssh: true, telnet: false, snmp: true}
+    svis:
+      - {vlan: 10, ip: 10.10.10.253/24}
+      - {vlan: 20, ip: 10.10.20.253/24}
+      - {vlan: 30, ip: 10.10.30.253/24}
+      - {vlan: 40, ip: 10.10.40.253/24}
+    vrrp:
+      - {vrid: 10, vlan: 10, virtual_ip: 10.10.10.254, priority: 100, preempt_delay: 20}
+      - {vrid: 20, vlan: 20, virtual_ip: 10.10.20.254, priority: 100, preempt_delay: 20}
+      - {vrid: 30, vlan: 30, virtual_ip: 10.10.30.254, priority: 100, preempt_delay: 20}
+      - {vrid: 40, vlan: 40, virtual_ip: 10.10.40.254, priority: 100, preempt_delay: 20}
+    interfaces:
+      - {name: GE0/0/1,  type: trunk,  allow_vlans: [10, 40], peer: "ACC-WORKSHOP:GE0/0/23"}
+      - {name: GE0/0/2,  type: trunk,  allow_vlans: [20, 40], peer: "ACC-OFFICE:GE0/0/23"}
+      - {name: GE0/0/3,  type: trunk,  allow_vlans: [30, 40], peer: "ACC-SERVER:GE0/0/23"}
+      - {name: GE0/0/20, type: routed, ip: 10.10.99.2/30, peer: "Core-SW-1:GE0/0/20", description: 核心互联（心跳兼数据）}
+      - {name: GE0/0/21, type: routed, ip: 10.10.88.5/30, peer: "RT-EGRESS:GE0/0/2", description: 上联出口}
+    static_routes:
+      - {dest: 0.0.0.0/0, next_hop: 10.10.88.6, metric: 60, description: 缺省路由指向出口路由器}
+
+  - name: ACC-WORKSHOP
+    role: access
+    model: S5735-L8T4S
+    description: 车间接入交换机（双上联）
+    management_ip: 10.10.40.21
+    vlans: [10, 40]
+    management: {ssh: true, telnet: false, snmp: true}
+    svis:
+      - {vlan: 40, ip: 10.10.40.21/24}
+    interfaces:
+      - {name: GE0/0/1,  type: access, vlan: 10, peer: "PLC-01"}
+      - {name: GE0/0/2,  type: access, vlan: 10, peer: "PLC-02"}
+      - {name: GE0/0/3,  type: access, vlan: 10, peer: "ROBOT-01"}
+      - {name: GE0/0/4,  type: access, vlan: 10, peer: "HMI-01"}
+      - {name: GE0/0/5,  type: access, vlan: 10, peer: "ENG-WS"}
+      - {name: GE0/0/23, type: trunk,  allow_vlans: [10, 40], peer: "Core-SW-2:GE0/0/1"}
+      - {name: GE0/0/24, type: trunk,  allow_vlans: [10, 40], peer: "Core-SW-1:GE0/0/1"}
+    static_routes:
+      - {dest: 0.0.0.0/0, next_hop: 10.10.40.254, metric: 60, description: 管理流量默认网关}
+
+  - name: ACC-OFFICE
+    role: access
+    model: S5735-L8T4S
+    description: 办公接入交换机（双上联）
+    management_ip: 10.10.40.22
+    vlans: [20, 40]
+    management: {ssh: true, telnet: false, snmp: true}
+    svis:
+      - {vlan: 40, ip: 10.10.40.22/24}
+    interfaces:
+      - {name: GE0/0/1,  type: access, vlan: 20, peer: "PC-FIN-01"}
+      - {name: GE0/0/2,  type: access, vlan: 20, peer: "PC-PLN-01"}
+      - {name: GE0/0/3,  type: access, vlan: 20, peer: "PRINTER-01"}
+      - {name: GE0/0/10, type: access, vlan: 40, peer: "NMS-02"}
+      - {name: GE0/0/23, type: trunk,  allow_vlans: [20, 40], peer: "Core-SW-2:GE0/0/2"}
+      - {name: GE0/0/24, type: trunk,  allow_vlans: [20, 40], peer: "Core-SW-1:GE0/0/2"}
+    static_routes:
+      - {dest: 0.0.0.0/0, next_hop: 10.10.40.254, metric: 60, description: 管理流量默认网关}
+
+  - name: ACC-SERVER
+    role: access
+    model: S5735-L8T4S
+    description: 服务器接入交换机（双上联，兼带管理区接入）
+    management_ip: 10.10.40.23
+    vlans: [30, 40]
+    management: {ssh: true, telnet: false, snmp: true}
+    svis:
+      - {vlan: 40, ip: 10.10.40.23/24}
+    interfaces:
+      - {name: GE0/0/1,  type: access, vlan: 30, peer: "MES-APP"}
+      - {name: GE0/0/2,  type: access, vlan: 30, peer: "MES-DB"}
+      - {name: GE0/0/3,  type: access, vlan: 30, peer: "OPCUA-GW"}
+      - {name: GE0/0/4,  type: access, vlan: 30, peer: "NTP-SRV"}
+      - {name: GE0/0/11, type: access, vlan: 40, peer: "NMS-01"}
+      - {name: GE0/0/12, type: access, vlan: 40, peer: "RT-EGRESS:GE0/0/4"}
+      - {name: GE0/0/23, type: trunk,  allow_vlans: [30, 40], peer: "Core-SW-2:GE0/0/3"}
+      - {name: GE0/0/24, type: trunk,  allow_vlans: [30, 40], peer: "Core-SW-1:GE0/0/3"}
+    static_routes:
+      - {dest: 0.0.0.0/0, next_hop: 10.10.40.254, metric: 60, description: 管理流量默认网关}
+
+  - name: RT-EGRESS
+    role: router
+    model: AR-6120
+    description: 出口路由器（NAT 出口 + 内外网边界）
+    management_ip: 10.10.40.200
+    vlans: []
+    management: {ssh: true, telnet: false, snmp: true}
+    interfaces:
+      - {name: GE0/0/1, type: routed, ip: 10.10.88.2/30, peer: "Core-SW-1:GE0/0/21", description: 内网主用出口}
+      - {name: GE0/0/2, type: routed, ip: 10.10.88.6/30, peer: "Core-SW-2:GE0/0/21", description: 内网备用出口}
+      - {name: GE0/0/3, type: routed, ip: 198.51.100.2/30, peer: "Internet", is_public: true, description: 公网出口}
+      - {name: GE0/0/4, type: routed, ip: 10.10.40.200/24, peer: "ACC-SERVER:GE0/0/12", description: 带外管理口}
+    static_routes:
+      - {dest: 10.10.0.0/16, next_hop: 10.10.88.1, metric: 10, description: 回程路由（主，走 Core-SW-1）}
+      - {dest: 10.10.0.0/16, next_hop: 10.10.88.5, metric: 20, description: 回程路由（备，走 Core-SW-2）}
+      - {dest: 0.0.0.0/0, next_hop: 198.51.100.1, metric: 10, description: 公网缺省路由}
+
+# -----------------------------------------------------------------------------
+# NAT 出口策略
+# -----------------------------------------------------------------------------
+nat:
+  enabled: true
+  device: RT-EGRESS
+  acl_id: 2000
+  public_interface: GE0/0/3
+  mode: pat                       # 端口复用（Easy IP）
+  allowed_zones: [office, server] # 只有办公区与服务器区允许出网
+  description: 办公区与服务器区经 NAT 访问互联网；生产网与网管区不在 NAT 范围内
+
+# -----------------------------------------------------------------------------
+# 安全策略表（域间访问控制，按顺序匹配，首条命中生效）
+#
+# 排列顺序即优先级。规范要求：放通规则在前、拒绝规则在后、兜底默认拒绝。
+# -----------------------------------------------------------------------------
+security_policies:
+  # ---- 放通规则（具体目标优先）----
+  - {id: 10, from: workshop, to: server,   action: permit, protocol: tcp,  ports: [8080, 3306, 4840], desc: 车间访问 MES 应用 / 数据库 / OPC UA 网关}
+  - {id: 11, from: workshop, to: server,   action: permit, protocol: udp,  ports: [123],            desc: 车间设备向 NTP 服务器对时}
+  - {id: 12, from: workshop, to: server,   action: permit, protocol: icmp, ports: null,             desc: 车间到服务器区允许 ICMP 排障}
+  - {id: 20, from: office,   to: server,   action: permit, protocol: tcp,  ports: [80, 443, 8080],  desc: 办公区访问 MES Web 及其它 B/S 系统}
+  - {id: 30, from: mgmt,     to: any,      action: permit, protocol: tcp,  ports: [22],             desc: 网管区 SSH 管理全网设备}
+  - {id: 31, from: mgmt,     to: any,      action: permit, protocol: icmp, ports: null,             desc: 网管区对全网做连通性巡检}
+  - {id: 32, from: mgmt,     to: any,      action: permit, protocol: udp,  ports: [161],            desc: 网管区 SNMP 采集全网设备（SNMP 走 UDP，不能写成 TCP）}
+  # ---- 拒绝规则（合规要求，需留痕）----
+  - {id: 40, from: workshop, to: office,   action: deny,   desc: 生产网与办公网必须隔离}
+  - {id: 41, from: office,   to: workshop, action: deny,   desc: 办公网不得访问生产设备}
+  - {id: 42, from: server,   to: workshop, action: deny,   desc: 服务器区不得主动访问生产设备（防横向移动）}
+  - {id: 43, from: workshop, to: mgmt,     action: deny,   desc: 生产终端不得进入设备管理网}
+  - {id: 44, from: office,   to: server,   action: deny,   desc: 办公区不得访问数据库等未放通服务}
+  - {id: 45, from: workshop, to: internet, action: deny,   desc: 生产网禁止访问互联网}
+  - {id: 46, from: any,      to: mgmt,     action: deny,   desc: 除网管区外不得访问设备管理网}
+  - {id: 47, from: server,   to: office,   action: deny,   desc: 服务器区不得访问办公区（防数据外泄）}
+  # ---- 出网放通：必须排在所有内网拒绝规则之后 ----
+  # 原因：出网用的 `permit ip` 目标为 any，是一条 catch-all 规则。
+  # 若排在前面，它会遮蔽后面所有内网拒绝规则，隔离要求集体失效。
+  # 这也是工厂网策略表最常见的排错点，可达性矩阵会把它直接暴露出来。
+  - {id: 50, from: office,   to: internet, action: permit, protocol: any,  ports: null,             desc: 办公区经 NAT 访问互联网}
+  - {id: 51, from: server,   to: internet, action: permit, protocol: any,  ports: null,             desc: 服务器区经 NAT 下载补丁与更新}
+  # ---- 兜底 ----
+  - {id: 90, from: any,      to: any,      action: deny,   desc: 默认拒绝并记录日志}
+
+# -----------------------------------------------------------------------------
+# 全局运维要求
+# -----------------------------------------------------------------------------
+operations:
+  logging:
+    required: true
+    server: NMS-01
+    description: 所有设备日志上送网管服务器，ACL 拒绝动作必须记录
+  ntp:
+    required: true
+    server: 10.10.30.31
+    description: 全网设备向 NTP 服务器对时，日志时间戳才有可比性
+  config_backup:
+    required: true
+    description: 每次变更后自动生成配置备份，带版本号与生成时间

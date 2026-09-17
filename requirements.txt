@@ -1,0 +1,8 @@
+# ---- 核心依赖 ----
+PyYAML>=6.0          # 拓扑即数据：读写 YAML
+Jinja2>=3.1          # 配置模板渲染
+
+# ---- 测试与报告 ----
+pytest>=8.0
+pytest-html>=4.1
+openpyxl>=3.1        # Excel 报告（缺失时自动降级为只出 HTML）

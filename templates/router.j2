@@ -1,0 +1,70 @@
+# =============================================================================
+# {{ device.name }} — {{ device.description }}
+# 型号：{{ device.model }}    管理地址：{{ device.management_ip }}
+# 拓扑：{{ meta.name }}（{{ meta.site }}）  {{ meta.version }}
+# 生成时间：{{ generated_at }}
+#
+# 本文件由 net_auto 自动生成（templates/router.j2），请勿手工修改设备。
+# 出口路由器职责：内外网边界 + NAT 出口。
+# 注意：ACL 必须先于 nat outbound 定义，否则引用不到。
+# =============================================================================
+#
+sysname {{ device.name }}
+#
+# ---- NAT 地址转换规则（Easy IP / PAT）----
+#
+{% if nat %}
+acl number {{ nat.acl_id }}
+ description NAT-EGRESS
+{% for r in nat.rules %}
+ rule {{ r.seq }} {{ r.action }} source {{ r.source_prefix }} {{ r.wildcard }}
+{% endfor %}
+#
+{% endif %}
+# ---- 物理接口 ----
+#
+{% for iface in interfaces %}
+interface {{ iface.name }}
+ description {{ iface.desc_full }}
+ undo portswitch
+ ip address {{ iface.addr }} {{ iface.mask }}
+{% if nat and iface.name == nat.public_interface %}
+ nat outbound {{ nat.acl_id }}
+{% endif %}
+#
+{% endfor %}
+# ---- 路由 ----
+#
+{% for route in routes %}
+ip route-static {{ route.network }} {{ route.mask }} {{ route.next_hop }} preference {{ route.preference }}
+{% endfor %}
+#
+# ---- 基础运维 ----
+#
+{% if ops.ntp_required %}
+ntp-service unicast-server {{ ops.ntp_server }}
+#
+{% endif %}
+{% if ops.logging_required and ops.loghost %}
+info-center enable
+info-center loghost {{ ops.loghost }}
+info-center source default channel 2 log level warning
+#
+{% endif %}
+stelnet server enable
+#
+aaa
+ local-user netadmin password irreversible-cipher Netadmin@2026
+ local-user netadmin privilege level 15
+ local-user netadmin service-type ssh
+ local-user netadmin service-type snmp
+#
+user-interface vty 0 4
+ authentication-mode aaa
+ protocol inbound ssh
+#
+snmp-agent
+ snmp-agent sys-info version v2c
+ snmp-agent community read cipher SnmpRead@2026
+#
+return

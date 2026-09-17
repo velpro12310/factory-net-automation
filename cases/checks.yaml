@@ -1,0 +1,116 @@
+version: "1.0"
+note: >
+  校验能力清单。报告里的「校验能力覆盖率 = 被用例触发的能力数 / 本清单能力总数」。
+  这份清单必须完整登记：写了代码却没有任何用例触发的校验能力，随时可能静默失效
+  （本工程称之为「僵尸校验」——它比没有校验更危险，因为它给人虚假的安全感）。
+  新增校验能力时先在这里登记，再写用例。
+
+checks:
+  - key: CHK-STRUCT
+    name: 拓扑结构自检
+    module: 数据质量
+    detects: 连线不对称、主机接入口类型或 VLAN 错误、策略表缺少兜底默认拒绝
+    description: 在生成配置之前检查拓扑数据本身的一致性，把「数据错」与「生成错」分开
+
+  - key: CHK-IP
+    name: 地址冲突检测
+    module: 数据质量
+    detects: 跨设备 IP 重复、VRRP 虚拟地址与实体地址冲突
+    description: 同一设备的管理口地址与其管理 VLAN 的 SVI 是同一地址，不算冲突
+
+  - key: CHK-ACCESS
+    name: 主机接入口校验
+    module: 数据质量
+    detects: 主机接在 trunk 口上、接入口 VLAN 与所属安全域不一致
+    description: 数据类错误的兜底检查，行为类可达性推导发现不了这类问题
+
+  - key: CHK-POLICY-ORDER
+    name: 策略表结构校验
+    module: 配置生成
+    detects: 策略表为空、最后一条不是 any->any 兜底拒绝
+    description: 保证策略表具备完整的默认拒绝语义
+
+  - key: CHK-GEN
+    name: 配置生成
+    module: 配置生成
+    detects: 设备角色缺少模板、拓扑自检不通过时拒绝生成
+    description: 严格模式下模板变量名写错会立即报错，不会静默输出空值
+
+  - key: CHK-CONFIG
+    name: 配置回读一致性
+    module: 配置生成
+    detects: VLAN 缺失、接口类型/VLAN/地址不一致、SVI/VRRP 不一致、路由不一致、
+             ACL 条数或顺序不一致、NAT 引用缺失、运维配置缺失
+    description: 把生成的配置解析回结构再与拓扑模型逐条比对，闭合「配置即代码」回路
+
+  - key: CHK-IDEMPOTENT
+    name: 生成幂等性
+    module: 配置生成
+    detects: 生成结果含随机量导致每次不同
+    description: 幂等是配置比对的前提；不幂等的生成器无法用于变更审计
+
+  - key: CHK-DEADRULE
+    name: ACL 死规则检测
+    module: 安全策略
+    detects: 被前面规则完全覆盖、永远不会命中的 ACL 规则
+    description: 死规则不造成功能故障，但会让排障时误判「这条路是通的」
+
+  - key: CHK-L2
+    name: 二层可达推导
+    module: 二层
+    detects: 同 VLAN 跨交换机不可达、不同 VLAN 二层直通
+    description: 按 VLAN 与 Trunk 放行列表推导二层连通性
+
+  - key: CHK-TRUNK
+    name: Trunk 放行校验
+    module: 二层
+    detects: Trunk 未放行某 VLAN、链路两端放行列表不一致
+    description: 上行 Trunk 是接入层与核心层之间唯一的承载通道
+
+  - key: CHK-L3
+    name: 三层路由推导
+    module: 三层
+    detects: 核心缺少目的网段 SVI、缺少缺省路由、路由不可达
+    description: 跨域流量必经核心的三层转发，无路由即不可达
+
+  - key: CHK-VRRP
+    name: 网关冗余校验
+    module: 可用性
+    detects: 主备设备缺 SVI、缺 VRRP 实例、优先级倒置、抢占未配置
+    description: 网关是单点故障的高发位置，必须做冗余校验
+
+  - key: CHK-ACL
+    name: 域间策略推导
+    module: 安全策略
+    detects: 业务流被策略拒绝、放通规则被误删、未显式放通落到默认拒绝
+    description: 按策略表顺序做首条命中匹配，并能给出命中或拒绝的具体规则编号
+
+  - key: CHK-NAT
+    name: NAT 出口推导
+    module: NAT 出口
+    detects: NAT 未启用、源区域未纳入 NAT 范围、出网流量地址未转换
+    description: 出网需要同时满足「策略放通」与「NAT 覆盖」两个条件
+
+  - key: CHK-MATRIX
+    name: 全量可达性矩阵
+    module: 可达性矩阵
+    detects: 任意主机对 × 任意服务的放通/阻断结论缺失
+    description: 矩阵是「面」检查的基础数据，点检查覆盖不到的组合靠它兜住
+
+  - key: CHK-EXP
+    name: 期望校验
+    module: 可达性矩阵
+    detects: 声明为必须放通的业务流实际被阻断（或反之）
+    description: 点检查，覆盖关键业务流的设计意图
+
+  - key: CHK-INV
+    name: 不变式全矩阵扫描
+    module: 可达性矩阵
+    detects: 隔离要求在某类组合上被破坏
+    description: 面检查，用于表达「某域到某域的所有主机、所有服务都必须阻断」这类普适要求
+
+  - key: CHK-FAULT
+    name: 故障注入检出
+    module: 故障检出
+    detects: 注入的已知缺陷未被任何检查发现
+    description: 等价于变异测试，用来证明整套校验能力不是摆设

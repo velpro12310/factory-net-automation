@@ -1,0 +1,569 @@
+version: "1.0"
+project: 智能工厂网络 · 配置即代码与可达性验证
+note: >
+  50 条用例。kind 区分正向 / 负向 / 变异：
+    正向 —— 验证设计意图成立
+    负向 —— 验证约束被正确违反拦截（越界、缺路由、默认拒绝）
+    变异 —— 故意把拓扑改坏，验证校验能力能检出（等价于变异测试）
+  checks 列出该用例触发哪些校验能力，报告里的能力覆盖率由此计算。
+
+cases:
+  # ================= 配置生成与一致性（6） =================
+  - id: TC-GEN-001
+    title: 按拓扑生成全部设备配置且头部可追溯
+    category: 配置生成
+    module: 配置生成
+    requirement: REQ-GEN-011
+    checks: [CHK-GEN]
+    method: 等价类
+    kind: 正向
+    priority: P0
+    expected: 6 台设备各有一份配置；文件头含设备名、型号、管理地址、拓扑版本与生成时间，并标注禁止手工修改
+
+  - id: TC-GEN-002
+    title: VLAN 定义完整下发
+    category: 配置生成
+    module: 配置生成
+    requirement: REQ-GEN-012
+    checks: [CHK-CONFIG]
+    method: 边界值
+    kind: 正向
+    priority: P0
+    expected: 每台设备的 vlan batch 覆盖其拓扑中声明的全部 VLAN，无遗漏
+
+  - id: TC-GEN-003
+    title: 接口配置与拓扑逐条一致
+    category: 配置生成
+    module: 配置生成
+    requirement: REQ-GEN-013
+    checks: [CHK-CONFIG]
+    method: 等价类
+    kind: 正向
+    priority: P0
+    expected: Trunk 放行列表、Access 默认 VLAN、路由口地址掩码与拓扑完全一致
+
+  - id: TC-GEN-004
+    title: SVI 网关与 VRRP 配置一致
+    category: 配置生成
+    module: 配置生成
+    requirement: REQ-GEN-014
+    checks: [CHK-CONFIG]
+    method: 等价类
+    kind: 正向
+    priority: P0
+    expected: 每个 VLAN 的 SVI 地址掩码、VRRP 虚拟地址与优先级均与拓扑一致
+
+  - id: TC-GEN-005
+    title: ACL 与策略表逐条对应且顺序一致
+    category: 配置生成
+    module: 配置生成
+    requirement: REQ-GEN-016
+    checks: [CHK-CONFIG, CHK-POLICY-ORDER, CHK-DEADRULE]
+    method: 等价类
+    kind: 正向
+    priority: P0
+    expected: 四个域的 ACL 规则条数与内容顺序与规范化策略表逐条一致；死规则已剔除、兜底拒绝保留；策略表末条为 any->any 拒绝
+
+  - id: TC-GEN-006
+    title: 生成结果幂等
+    category: 配置生成
+    module: 配置生成
+    requirement: REQ-GEN-017
+    checks: [CHK-IDEMPOTENT]
+    method: 错误推测
+    kind: 正向
+    priority: P1
+    expected: 同一拓扑重复生成输出逐字节一致；不同时间戳仅头部一行不同（配置比对才有意义）
+
+  # ================= 拓扑数据质量（4） =================
+  - id: TC-TOPO-001
+    title: 拓扑连线双向一致，无悬空链路
+    category: 数据质量
+    module: 数据质量
+    requirement: REQ-TOPO-011
+    checks: [CHK-STRUCT]
+    method: 错误推测
+    kind: 正向
+    priority: P0
+    expected: 结构自检无问题；每条链路对端存在且回指一致
+
+  - id: TC-TOPO-002
+    title: 主机接入口类型与 VLAN 与所属域一致
+    category: 数据质量
+    module: 数据质量
+    requirement: REQ-TOPO-013
+    checks: [CHK-STRUCT, CHK-ACCESS]
+    method: 等价类
+    kind: 正向
+    priority: P0
+    expected: 14 台内网主机（含主备网管）全部接在 access 口上，且端口 VLAN 等于所属安全域的 VLAN
+
+  - id: TC-TOPO-003
+    title: 全网地址无冲突
+    category: 数据质量
+    module: 数据质量
+    requirement: REQ-TOPO-012
+    checks: [CHK-IP]
+    method: 错误推测
+    kind: 正向
+    priority: P0
+    expected: 主机地址、设备管理地址、SVI 地址、路由口地址、VRRP 虚拟地址互不冲突
+
+  - id: TC-TOPO-004
+    title: VLAN 使用前均已定义
+    category: 数据质量
+    module: 数据质量
+    requirement: REQ-TOPO-014
+    checks: [CHK-STRUCT]
+    method: 边界值
+    kind: 负向
+    priority: P1
+    expected: 删除 VLAN 定义后结构自检必须报错并指出哪台设备引用了它
+
+  # ================= 二层与 VLAN（6） =================
+  - id: TC-L2-001
+    title: 同交换机同 VLAN 二层直达
+    category: 二层与 VLAN
+    module: 二层
+    requirement: REQ-L2-011
+    checks: [CHK-L2]
+    method: 等价类
+    kind: 正向
+    priority: P0
+    expected: 接在同一接入交换机、同 VLAN 的两台主机可达，且判定层级为 l2
+
+  - id: TC-L2-002
+    title: 跨交换机同 VLAN 经双上联 Trunk 互通
+    category: 二层与 VLAN
+    module: 二层
+    requirement: REQ-L2-012
+    checks: [CHK-L2]
+    method: 等价类
+    kind: 正向
+    priority: P0
+    expected: 同 VLAN 主机跨接入交换机可达（服务区 MES-APP 与 MES-DB 之间即为同域跨机场景）
+
+  - id: TC-L2-003
+    title: 不同 VLAN 之间无二层直通
+    category: 二层与 VLAN
+    module: 二层
+    requirement: REQ-L2-013
+    checks: [CHK-L2]
+    method: 判定表
+    kind: 负向
+    priority: P0
+    expected: 跨 VLAN 的流一律判定为三层转发路径（layer=l3），不出现二层直通
+
+  - id: TC-L2-004
+    title: Trunk 放行列表决定 VLAN 承载
+    category: 二层与 VLAN
+    module: 二层
+    requirement: REQ-L2-014
+    checks: [CHK-TRUNK, CHK-L2]
+    method: 变异测试
+    kind: 变异
+    priority: P0
+    expected: 摘掉接入交换机全部上行 Trunk 上的某 VLAN 后，该域主机立即不可达，且原因指明二层不通
+
+  - id: TC-L2-005
+    title: 上行 Trunk 两端放行列表一致
+    category: 二层与 VLAN
+    module: 二层
+    requirement: REQ-L2-014
+    checks: [CHK-TRUNK]
+    method: 错误推测
+    kind: 负向
+    priority: P1
+    expected: 每条 Trunk 与其对端的放行 VLAN 集合完全一致，不存在单向放行
+
+  - id: TC-L2-006
+    title: 接入端口均为 access 且生成配置正确
+    category: 二层与 VLAN
+    module: 二层
+    requirement: REQ-L2-015
+    checks: [CHK-ACCESS, CHK-CONFIG]
+    method: 等价类
+    kind: 正向
+    priority: P1
+    expected: 生成配置中接入端口为 port link-type access + port default vlan + stp edged-port
+
+  # ================= 三层与路由（6） =================
+  - id: TC-L3-001
+    title: 跨域流量经核心 SVI 转发并命中策略
+    category: 三层与路由
+    module: 三层
+    requirement: REQ-L3-011
+    checks: [CHK-L3, CHK-ACL]
+    method: 场景法
+    kind: 正向
+    priority: P0
+    expected: 跨域放通的流其推导步骤中依次出现「源侧到网关 / 网关状态 / 域间策略 / 目的侧二层」
+
+  - id: TC-L3-002
+    title: 静态路由与缺省路由正确
+    category: 三层与路由
+    module: 三层
+    requirement: REQ-L3-012
+    checks: [CHK-L3, CHK-CONFIG]
+    method: 等价类
+    kind: 正向
+    priority: P0
+    expected: 核心与接入交换机缺省路由指向其网关；出口路由器有回程路由与公网缺省路由，且主备优先级正确
+
+  - id: TC-L3-003
+    title: 核心缺少目的网段 SVI 时该域不可达
+    category: 三层与路由
+    module: 三层
+    requirement: REQ-L3-013
+    checks: [CHK-L3]
+    method: 变异测试
+    kind: 变异
+    priority: P0
+    expected: 删除核心某 VLAN 的 SVI 后，指向该域的流全部变为不可达，原因为无路由
+
+  - id: TC-L3-004
+    title: 核心具备全部业务 VLAN 的 SVI
+    category: 三层与路由
+    module: 三层
+    requirement: REQ-L3-014
+    checks: [CHK-L3]
+    method: 等价类
+    kind: 正向
+    priority: P0
+    expected: 四台业务 VLAN（10/20/30/40）在两台核心上都有对应 SVI
+
+  - id: TC-L3-005
+    title: VRRP 主备优先级与抢占配置正确
+    category: 三层与路由
+    module: 三层
+    requirement: REQ-L3-015
+    checks: [CHK-VRRP]
+    method: 判定表
+    kind: 正向
+    priority: P0
+    expected: 主设备优先级 120 高于备设备 100，两者都配置抢占延迟，虚拟地址在两个实例上一致
+
+  - id: TC-L3-006
+    title: 不可达结论可追溯到被拦位置
+    category: 三层与路由
+    module: 三层
+    requirement: REQ-MTX-014
+    checks: [CHK-L3, CHK-MATRIX]
+    method: 错误推测
+    kind: 正向
+    priority: P1
+    expected: 每条 deny 结论都给出 reason 与推导步骤；策略拒绝时还给出命中的策略编号
+
+  # ================= 安全策略与 ACL（8） =================
+  - id: TC-ACL-001
+    title: 车间到服务器区按白名单端口放通
+    category: 安全策略
+    module: 安全策略
+    requirement: REQ-ACL-011
+    checks: [CHK-ACL]
+    method: 等价类
+    kind: 正向
+    priority: P0
+    expected: 8080/3306/4840/123/ICMP 全部放通；HTTPS(443)、SMB(445)、SSH(22) 等未列端口全部拒绝
+
+  - id: TC-ACL-002
+    title: 办公区到服务器区仅放通 Web
+    category: 安全策略
+    module: 安全策略
+    requirement: REQ-ACL-012
+    checks: [CHK-ACL]
+    method: 判定表
+    kind: 正向
+    priority: P0
+    expected: 80/443/8080 放通；3306 及其它端口拒绝
+
+  - id: TC-ACL-003
+    title: 生产网与办公网双向完全隔离
+    category: 安全策略
+    module: 安全策略
+    requirement: REQ-ACL-013
+    checks: [CHK-ACL, CHK-INV]
+    method: 判定表
+    kind: 负向
+    priority: P0
+    expected: 车间到办公、办公到车间的全部主机与服务组合均为拒绝
+
+  - id: TC-ACL-004
+    title: 服务器区不得主动访问生产网
+    category: 安全策略
+    module: 安全策略
+    requirement: REQ-ACL-014
+    checks: [CHK-ACL]
+    method: 判定表
+    kind: 负向
+    priority: P0
+    expected: 服务器区到车间、办公区的全部服务均拒绝（含 MES 回访 PLC 的场景）
+
+  - id: TC-ACL-005
+    title: 生产网无任何出网通道
+    category: 安全策略
+    module: 安全策略
+    requirement: REQ-ACL-015
+    checks: [CHK-ACL, CHK-NAT]
+    method: 判定表
+    kind: 负向
+    priority: P0
+    expected: 车间到互联网的所有服务均拒绝；同时车间不在 NAT 允许区域列表内
+
+  - id: TC-ACL-006
+    title: 网管区可管理全网设备
+    category: 安全策略
+    module: 安全策略
+    requirement: REQ-ACL-016
+    checks: [CHK-ACL]
+    method: 等价类
+    kind: 正向
+    priority: P0
+    expected: 管理区到任意内部主机的 SSH(22)、SNMP(161/UDP)、ICMP 均放通
+
+  - id: TC-ACL-007
+    title: 非管理区不得进入设备管理网
+    category: 安全策略
+    module: 安全策略
+    requirement: REQ-ACL-017
+    checks: [CHK-ACL]
+    method: 判定表
+    kind: 负向
+    priority: P0
+    expected: 车间/办公/服务器区到管理网的全部服务均拒绝；管理方向不可逆
+
+  - id: TC-ACL-008
+    title: 未显式放通的组合落到默认拒绝
+    category: 安全策略
+    module: 安全策略
+    requirement: REQ-ACL-018
+    checks: [CHK-ACL, CHK-POLICY-ORDER]
+    method: 错误推测
+    kind: 负向
+    priority: P0
+    expected: 如「网管区到数据库 3306」这类未声明组合必须拒绝，且原因为默认拒绝
+
+  # ================= NAT 与出口（4） =================
+  - id: TC-NAT-001
+    title: 办公区经 NAT 访问互联网
+    category: NAT 与出口
+    module: NAT 出口
+    requirement: REQ-NAT-011
+    checks: [CHK-NAT]
+    method: 等价类
+    kind: 正向
+    priority: P0
+    expected: 办公区任意主机到互联网任意服务均放通，且推导结果标记 nat_applied
+
+  - id: TC-NAT-002
+    title: 服务器区经 NAT 访问互联网
+    category: NAT 与出口
+    module: NAT 出口
+    requirement: REQ-NAT-012
+    checks: [CHK-NAT]
+    method: 等价类
+    kind: 正向
+    priority: P0
+    expected: 服务器区到补丁源放通且经 NAT 转换
+
+  - id: TC-NAT-003
+    title: 生产网与网管区不在 NAT 范围内
+    category: NAT 与出口
+    module: NAT 出口
+    requirement: REQ-NAT-013
+    checks: [CHK-NAT, CHK-CONFIG]
+    method: 判定表
+    kind: 负向
+    priority: P0
+    expected: NAT 地址池只含办公区与服务器区网段；车间与管理区出网请求被拒且原因为未纳入 NAT 策略
+
+  - id: TC-NAT-004
+    title: 公网口正确引用 NAT 地址池
+    category: NAT 与出口
+    module: NAT 出口
+    requirement: REQ-NAT-014
+    checks: [CHK-CONFIG, CHK-NAT]
+    method: 等价类
+    kind: 正向
+    priority: P1
+    expected: 生成配置中公网口有 nat outbound 2000，且 ACL 2000 定义在引用之前
+
+  # ================= 可达性矩阵与期望（4） =================
+  - id: TC-MTX-001
+    title: 全量矩阵生成且每个组合都有明确结论
+    category: 可达性矩阵
+    module: 可达性矩阵
+    requirement: REQ-MTX-011
+    checks: [CHK-MATRIX]
+    method: 等价类
+    kind: 正向
+    priority: P0
+    expected: 14 台内网主机 × 15 台目标 × 10 种服务 = 2100 个组合，全部有 permit/deny 结论
+
+  - id: TC-MTX-002
+    title: 关键业务流期望全部成立
+    category: 可达性矩阵
+    module: 可达性矩阵
+    requirement: REQ-MTX-012
+    checks: [CHK-EXP]
+    method: 场景法
+    kind: 正向
+    priority: P0
+    expected: 25 条期望（含 17 条放通、8 条阻断）全部与实际推导一致，偏差数为 0
+
+  - id: TC-MTX-003
+    title: 隔离不变式在全矩阵范围内成立
+    category: 可达性矩阵
+    module: 可达性矩阵
+    requirement: REQ-MTX-013
+    checks: [CHK-INV]
+    method: 判定表
+    kind: 正向
+    priority: P0
+    expected: 13 条不变式全部成立；每条都匹配到实际流量组合（不出现零匹配的假通过）
+
+  - id: TC-MTX-004
+    title: 同域内部可达性不受域间策略影响
+    category: 可达性矩阵
+    module: 可达性矩阵
+    requirement: REQ-MTX-011
+    checks: [CHK-MATRIX, CHK-L2]
+    method: 边界值
+    kind: 正向
+    priority: P1
+    expected: 车间/办公/服务器区内部主机对全部放通，判定层级为 l2，不受域间 ACL 影响
+
+  # ================= 可用性与冗余（4） =================
+  - id: TC-AVL-001
+    title: 接入交换机双上联至两台核心
+    category: 可用性
+    module: 可用性
+    requirement: REQ-AVL-011
+    checks: [CHK-STRUCT, CHK-CONFIG]
+    method: 等价类
+    kind: 正向
+    priority: P0
+    expected: 三台接入交换机各有两条上行 Trunk，分别连 Core-SW-1 与 Core-SW-2，且放行 VLAN 一致
+
+  - id: TC-AVL-002
+    title: 每个业务 VLAN 恰好一个 VRRP 虚拟网关
+    category: 可用性
+    module: 可用性
+    requirement: REQ-AVL-014
+    checks: [CHK-VRRP]
+    method: 边界值
+    kind: 正向
+    priority: P0
+    expected: 四个业务 VLAN 各有且仅有一个 VRRP 组，虚拟地址不重复、不与实体地址冲突
+
+  - id: TC-AVL-003
+    title: 单条上行链路故障不影响业务可达性
+    category: 可用性
+    module: 可用性
+    requirement: REQ-AVL-013
+    checks: [CHK-FAULT, CHK-VRRP, CHK-L2]
+    method: 变异测试
+    kind: 变异
+    priority: P0
+    expected: 只摘掉一条上行 Trunk 的某个 VLAN 后，全部期望与不变式仍成立（冗余设计生效）
+
+  - id: TC-AVL-004
+    title: 出口链路冗余与回程路由主备
+    category: 可用性
+    module: 可用性
+    requirement: REQ-AVL-012
+    checks: [CHK-L3, CHK-CONFIG]
+    method: 等价类
+    kind: 正向
+    priority: P1
+    expected: 10.10.0.0/16 有两条回程路由分别指向 Core-SW-1 与 Core-SW-2，优先级 10 优于 20
+
+  # ================= 故障检出能力（6） =================
+  - id: TC-FLT-001
+    title: 漏放行 VLAN 可被检出
+    category: 故障检出
+    module: 故障检出
+    requirement: REQ-FLT-011
+    checks: [CHK-FAULT]
+    method: 变异测试
+    kind: 变异
+    priority: P0
+    expected: 注入 FLT-001 后检查套件报错，症状指向服务器区业务流全部失效
+
+  - id: TC-FLT-002
+    title: 误删放通策略可被检出
+    category: 故障检出
+    module: 故障检出
+    requirement: REQ-FLT-012
+    checks: [CHK-FAULT]
+    method: 变异测试
+    kind: 变异
+    priority: P0
+    expected: 注入 FLT-002 后车间到 MES 的业务流期望失效，且检出数量与影响范围一致
+
+  - id: TC-FLT-003
+    title: 过度放通（catch-all permit）可被检出
+    category: 故障检出
+    module: 故障检出
+    requirement: REQ-FLT-013
+    checks: [CHK-FAULT, CHK-INV]
+    method: 变异测试
+    kind: 变异
+    priority: P0
+    expected: 注入 any->any permit 后隔离类不变式成片失效（600 条以上违反），证明全矩阵扫描的必要性
+
+  - id: TC-FLT-004
+    title: 网关 SVI 缺失可被检出
+    category: 故障检出
+    module: 故障检出
+    requirement: REQ-FLT-014
+    checks: [CHK-FAULT, CHK-VRRP]
+    method: 变异测试
+    kind: 变异
+    priority: P0
+    expected: 删除 Core-SW-1 的服务器区 SVI 后，网关就绪检查失败并导致相关业务流不可达
+
+  - id: TC-FLT-005
+    title: NAT 失效可被检出
+    category: 故障检出
+    module: 故障检出
+    requirement: REQ-FLT-015
+    checks: [CHK-FAULT, CHK-NAT]
+    method: 变异测试
+    kind: 变异
+    priority: P0
+    expected: 关闭 NAT 后办公区与服务器区的出网期望失效
+
+  - id: TC-FLT-006
+    title: 数据类配置错误可被检出
+    category: 故障检出
+    module: 故障检出
+    requirement: REQ-FLT-016
+    checks: [CHK-FAULT, CHK-ACCESS]
+    method: 变异测试
+    kind: 变异
+    priority: P0
+    expected: 接入口 VLAN 划错后结构自检报错；即使可达性检查全绿也必须被拦下
+
+  # ================= 文档与排查 SOP（2） =================
+  - id: TC-DOC-001
+    title: 每台设备生成配置备份且内容一致
+    category: 文档与 SOP
+    module: 文档
+    requirement: REQ-DOC-011
+    checks: [CHK-GEN, CHK-CONFIG]
+    method: 等价类
+    kind: 正向
+    priority: P1
+    expected: output/configs 下每台设备对应一个 .cfg 文件，内容与生成结果逐字节一致
+
+  - id: TC-DOC-002
+    title: 故障排查 SOP 覆盖全部注入场景
+    category: 文档与 SOP
+    module: 文档
+    requirement: REQ-DOC-012
+    checks: [CHK-FAULT]
+    method: 等价类
+    kind: 正向
+    priority: P1
+    expected: docs 下的 SOP 为每条注入故障给出症状、定位命令与处置步骤，场景编号一一对应

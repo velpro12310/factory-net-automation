@@ -1,0 +1,273 @@
+version: "1.0"
+project: 智能工厂网络 · 配置即代码与可达性验证
+note: >
+  需求编号规则 REQ-<模块>-<三位序号>。
+  模块：TOPO 拓扑数据质量、GEN 配置生成、L2 二层、L3 三层、ACL 安全策略、
+  NAT 出口、AVL 可用性、MTX 可达性矩阵、FLT 故障检出、DOC 文档与 SOP。
+
+requirements:
+  # ---------------- 拓扑数据质量 ----------------
+  - id: REQ-TOPO-011
+    title: 拓扑连线双向一致
+    module: 拓扑数据
+    description: 每条链路的定义必须双向对应（A 声明连到 B，B 也必须声明连到 A），否则物理接线与文档不符
+    source: 网络设计规范 §2.1
+  - id: REQ-TOPO-012
+    title: 地址与端口无冲突
+    module: 拓扑数据
+    description: 全网 IP 不得重复；同一设备的管理口与管理 VLAN 的 SVI 是同一地址，不算冲突
+    source: 网络设计规范 §2.2
+  - id: REQ-TOPO-013
+    title: 主机接入口 VLAN 与所属域一致
+    module: 拓扑数据
+    description: 每台端系统接入的端口必须是 access 口，且其 VLAN 与所属安全域一致
+    source: 网络设计规范 §2.3
+  - id: REQ-TOPO-014
+    title: VLAN 使用前必须定义
+    module: 拓扑数据
+    description: 设备上引用的 VLAN 必须在 VLAN 清单中定义，Trunk 也不得放行未定义的 VLAN
+    source: 网络设计规范 §2.4
+
+  # ---------------- 配置生成 ----------------
+  - id: REQ-GEN-011
+    title: 按拓扑生成全部设备配置且头部可追溯
+    module: 配置生成
+    description: 拓扑中每台设备都要有一份配置，角色必须有对应模板，缺一即报错；
+                 每份配置头部包含设备名、型号、管理地址、拓扑版本与生成时间，
+                 并标注「请勿手工修改」与生成工具来源
+    source: 配置规范 §3.1
+  - id: REQ-GEN-012
+    title: VLAN 定义完整下发
+    module: 配置生成
+    description: 生成的 vlan batch 应覆盖该设备在拓扑中声明的全部 VLAN
+    source: 配置规范 §3.2
+  - id: REQ-GEN-013
+    title: 接口配置正确
+    module: 配置生成
+    description: Trunk 的放行列表、Access 的默认 VLAN、路由口的地址掩码均与拓扑一致
+    source: 配置规范 §3.3
+  - id: REQ-GEN-014
+    title: 网关与 VRRP 配置正确
+    module: 配置生成
+    description: 每个 VLAN 的 SVI 地址/掩码、VRRP 虚拟地址与优先级均与拓扑一致
+    source: 配置规范 §3.4
+  - id: REQ-GEN-016
+    title: ACL 规范化并与策略表逐条对应
+    module: 配置生成
+    description: 生成的 ACL 规则条数与顺序必须与规范化后的策略表逐条一致；
+                 规范化过程需剔除死规则（被前面规则完全覆盖、永远不会命中的规则），
+                 兜底默认拒绝除外
+    source: 配置规范 §3.6
+  - id: REQ-GEN-017
+    title: 生成结果可重复
+    module: 配置生成
+    description: 同一拓扑重复生成，除头部时间戳外输出逐字节一致（幂等），否则配置比对无法使用
+    source: 配置规范 §3.7
+
+  # ---------------- 二层与 VLAN ----------------
+  - id: REQ-L2-011
+    title: 同 VLAN 接入端口互通
+    module: 二层
+    description: 同一接入交换机上、同 VLAN 的两台主机可以二层直通
+    source: 网络设计规范 §4.1
+  - id: REQ-L2-012
+    title: 同 VLAN 跨交换机互通
+    module: 二层
+    description: 同 VLAN 的两台主机若接在不同接入交换机上，两侧上行 Trunk 都必须放行该 VLAN
+    source: 网络设计规范 §4.2
+  - id: REQ-L2-013
+    title: 不同 VLAN 二层隔离
+    module: 二层
+    description: 不同 VLAN 之间不构成二层可达，必须经三层设备转发并受策略约束
+    source: 网络设计规范 §4.3
+  - id: REQ-L2-014
+    title: Trunk 放行列表决定 VLAN 可达性
+    module: 二层
+    description: Trunk 未放行的 VLAN 不承载该 VLAN 流量；链路两端必须同步放行
+    source: 网络设计规范 §4.4
+  - id: REQ-L2-015
+    title: 接入口为 Access 且 VLAN 正确
+    module: 二层
+    description: 端系统接入口应为 access 模式并开启边缘端口，不得配成 trunk
+    source: 网络设计规范 §4.5
+
+  # ---------------- 三层与路由 ----------------
+  - id: REQ-L3-011
+    title: 跨 VLAN 经核心 SVI 路由
+    module: 三层
+    description: 跨安全域流量经核心交换机的 VLAN 三层接口转发，并在此处应用域间 ACL
+    source: 网络设计规范 §5.1
+  - id: REQ-L3-012
+    title: 静态路由与缺省路由正确
+    module: 三层
+    description: 核心与接入交换机的缺省路由指向正确；出口路由器具备回程路由（主备两条）
+                 与公网缺省路由；生成的静态路由条目、下一跳与优先级均与拓扑一致
+    source: 网络设计规范 §5.2
+  - id: REQ-L3-013
+    title: 无路由则不可达
+    module: 三层
+    description: 核心交换机上缺少目的网段的 SVI（即无路由）时，该网段不可达
+    source: 网络设计规范 §5.3
+  - id: REQ-L3-014
+    title: 核心具备全部业务 VLAN 的 SVI
+    module: 三层
+    description: 每个业务 VLAN 都必须在核心交换机上存在 SVI，否则该域无法与外界通信
+    source: 网络设计规范 §5.4
+  - id: REQ-L3-015
+    title: 网关冗余
+    module: 三层
+    description: 每个业务 VLAN 配置 VRRP，主备设备都有 SVI 与 VRRP 实例，主设备优先级高于备设备
+    source: 网络设计规范 §5.5
+
+  # ---------------- 安全策略与 ACL ----------------
+  - id: REQ-ACL-011
+    title: 车间到服务器区受控放通
+    module: 安全策略
+    description: 车间只允许访问 MES Web(8080)、数据库(3306)、OPC UA(4840)、NTP(123) 与 ICMP，其余一律拒绝
+    source: 安全策略 §6.1
+  - id: REQ-ACL-012
+    title: 办公区到服务器区仅放通 Web
+    module: 安全策略
+    description: 办公区只允许访问 80/443/8080，数据库等其它端口必须拒绝
+    source: 安全策略 §6.2
+  - id: REQ-ACL-013
+    title: 生产网与办公网完全隔离
+    module: 安全策略
+    description: 车间与办公区之间双向、全服务、全主机组合都必须阻断
+    source: 安全策略 §6.3
+  - id: REQ-ACL-014
+    title: 服务器区不得主动访问生产网
+    module: 安全策略
+    description: 服务器区到车间与办公区的所有流量必须阻断，防止横向移动与数据外泄
+    source: 安全策略 §6.4
+  - id: REQ-ACL-015
+    title: 生产网禁止出网
+    module: 安全策略
+    description: 车间到互联网的所有流量必须阻断，且该区域不纳入 NAT 范围
+    source: 安全策略 §6.5
+  - id: REQ-ACL-016
+    title: 网管区可管理全网设备
+    module: 安全策略
+    description: 管理区允许对全网发起 SSH(22)、SNMP(161/UDP) 与 ICMP
+    source: 安全策略 §6.6
+  - id: REQ-ACL-017
+    title: 其它区域不得进入设备管理网
+    module: 安全策略
+    description: 除管理区自身外，任何区域到管理网 10.10.40.0/24 的流量都必须阻断
+    source: 安全策略 §6.7
+  - id: REQ-ACL-018
+    title: 默认拒绝兜底
+    module: 安全策略
+    description: 策略表最后必须有一条 any -> any 拒绝规则；未显式放通的组合一律拒绝
+    source: 安全策略 §6.8
+
+  # ---------------- NAT 与出口 ----------------
+  - id: REQ-NAT-011
+    title: 办公区经 NAT 出网
+    module: NAT 出口
+    description: 办公区可访问互联网，源地址经 NAT 转换
+    source: 安全策略 §7.1
+  - id: REQ-NAT-012
+    title: 服务器区经 NAT 出网
+    module: NAT 出口
+    description: 服务器区可访问互联网下载补丁，源地址经 NAT 转换
+    source: 安全策略 §7.2
+  - id: REQ-NAT-013
+    title: 生产网与网管区不参与 NAT
+    module: NAT 出口
+    description: NAT 地址池只包含办公区与服务器区网段，生产网与管理区不得有出网通道
+    source: 安全策略 §7.3
+  - id: REQ-NAT-014
+    title: 出网流量源地址被转换
+    module: NAT 出口
+    description: 内网主机出网时，其源地址被转换为公网口地址（Easy IP）
+    source: 安全策略 §7.4
+
+  # ---------------- 可用性与冗余 ----------------
+  - id: REQ-AVL-011
+    title: 接入交换机双上联
+    module: 可用性
+    description: 每台接入交换机应有到两台核心交换机的上行链路，避免单点
+    source: 可用性设计 §8.1
+  - id: REQ-AVL-012
+    title: 出口链路冗余与回程路由
+    module: 可用性
+    description: 出口路由器应同时连到两台核心且走不同网段；出口到内网的回程路由
+                 应有主备两条（优先级 10 优于 20），避免出口成为单点
+    source: 可用性设计 §8.2
+  - id: REQ-AVL-013
+    title: 单链路故障不影响业务
+    module: 可用性
+    description: 单条上行链路故障（另一条仍正常）时，业务可达性应保持不变
+    source: 可用性设计 §8.3
+  - id: REQ-AVL-014
+    title: 每个 VLAN 唯一网关
+    module: 可用性
+    description: 同一 VLAN 只应有一个 VRRP 虚拟网关，避免网关冲突
+    source: 可用性设计 §8.4
+
+  # ---------------- 可达性矩阵 ----------------
+  - id: REQ-MTX-011
+    title: 全量可达性矩阵可生成
+    module: 可达性矩阵
+    description: 对全部主机对与全部服务组合推导出放通/阻断结论，且每个组合都有明确结论
+    source: 验证规范 §9.1
+  - id: REQ-MTX-012
+    title: 关键业务流全部放通
+    module: 可达性矩阵
+    description: 期望清单中声明为 permit 的关键业务流必须全部放通
+    source: 验证规范 §9.2
+  - id: REQ-MTX-013
+    title: 隔离要求不被破坏
+    module: 可达性矩阵
+    description: 不变式声明的隔离要求在全矩阵范围内必须成立（所有主机、所有服务组合）
+    source: 验证规范 §9.3
+  - id: REQ-MTX-014
+    title: 推导过程可追溯
+    module: 可达性矩阵
+    description: 每条不可达结论都要能给出被拦在哪一跳、命中了哪条策略
+    source: 验证规范 §9.4
+
+  # ---------------- 故障检出 ----------------
+  - id: REQ-FLT-011
+    title: 漏放行 VLAN 可检出
+    module: 故障检出
+    description: 上行 Trunk 漏放行某个 VLAN 时，校验套件必须报错并定位到受影响的业务流
+    source: 验证规范 §10.1
+  - id: REQ-FLT-012
+    title: 误删放通策略可检出
+    module: 故障检出
+    description: 删除关键放通策略后，必须检出受影响的业务流被阻断
+    source: 验证规范 §10.2
+  - id: REQ-FLT-013
+    title: 过度放通可检出
+    module: 故障检出
+    description: 出现 any -> any permit 这类过度放通时，必须检出隔离要求成片失效
+    source: 验证规范 §10.3
+  - id: REQ-FLT-014
+    title: 网关缺失可检出
+    module: 故障检出
+    description: 核心交换机丢失某个 VLAN 的 SVI 时，必须检出该域跨域访问不可用
+    source: 验证规范 §10.4
+  - id: REQ-FLT-015
+    title: NAT 失效可检出
+    module: 故障检出
+    description: NAT 被关闭时，必须检出办公区与服务器区无法出网
+    source: 验证规范 §10.5
+  - id: REQ-FLT-016
+    title: 数据类配置错误可检出
+    module: 故障检出
+    description: 接入口 VLAN 划错、VLAN 未定义等数据类错误必须由结构自检检出（行为检查发现不了）
+    source: 验证规范 §10.6
+
+  # ---------------- 文档与 SOP ----------------
+  - id: REQ-DOC-011
+    title: 每台设备生成配置备份
+    module: 文档
+    description: 输出目录下应有每台设备的配置文件，文件名与设备名对应，内容与生成结果一致
+    source: 运维规范 §11.1
+  - id: REQ-DOC-012
+    title: 故障排查 SOP 覆盖全部故障场景
+    module: 文档
+    description: SOP 中每个故障场景都对应一条注入验证，且给出处置步骤
+    source: 运维规范 §11.2
